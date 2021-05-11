@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.moviewflixnew.view.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_cadastrarFragment"
+            app:destination="@id/cadastrarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listMoviesFragment"
+        android:name="com.example.moviewflixnew.view.fragments.ListMoviesFragment"
+        android:label="fragment_list_movies"
+        tools:layout="@layout/fragment_list_movies" >
+        <action
+            android:id="@+id/action_listMoviesFragment_to_detailMoviesFragment"
+            app:destination="@id/detailMoviesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailMoviesFragment"
+        android:name="com.example.moviewflixnew.view.fragments.DetailMoviesFragment"
+        android:label="fragment_detail_movies"
+        tools:layout="@layout/fragment_detail_movies" />
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.moviewflixnew.view.fragments.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.moviewflixnew.view.fragments.SearchFragment"
+        android:label="fragment_config"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailMoviesFragment"
+            app:destination="@id/detailMoviesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.moviewflixnew.view.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_listMoviesFragment"
+            app:destination="@id/listMoviesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cadastrarFragment"
+        android:name="com.example.moviewflixnew.view.fragments.CadastrarFragment"
+        android:label="fragment_cadastrar"
+        tools:layout="@layout/fragment_cadastrar" >
+        <action
+            android:id="@+id/action_cadastrarFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>

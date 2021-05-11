@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MoviewFlixNew</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movieflix_title">MovieFlix</string>
+    <string name="hint_login_email">E-mail</string>
+    <string name="hint_login_senha">Senha</string>
+    <string name="btn_text_login">Entrar</string>
+    <string name="tv_cadastrar_login">Ainda não é cadastrado? Clique aqui.</string>
+    <string name="msg_senha_incorreta">Senha incorreta!</string>
+    <string name="msg_erro_login">Erro ao efeturar o login</string>
+    <string name="msg_campos_vazios">Favor preencha todos os campos</string>
+    <string name="txt_btn_cadastrar">Cadastrar</string>
+    <string name="tv_title_cadastrar">Cadastar</string>
+    <string name="description_back_btn">Button to back page</string>
+    <string name="msg_tamanho_senha">A senha deve ter no minimo 6 caracteres</string>
+    <string name="msg_email_existente">O e-mail cadastrado já existe</string>
+    <string name="msg_sem_conexao">Estamos com problemas de conexão</string>
+    <string name="msg_erro_cadastro_usuario">Erro ao cadastrar usuário</string>
+    <string name="hint_search_bar">Digite o nome do filme</string>
+    <string name="titulo_detail">Titulo:</string>
+    <string name="overview_detail">Overview:</string>
+    <string name="dsc_back_btn">voltar pagina</string>
+    <string name="botao_proxima_pagina">botao proxima pagina</string>
+</resources>
