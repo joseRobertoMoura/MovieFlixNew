@@ -10,6 +10,7 @@ import android.widget.Toast
 import coil.load
 import com.example.moviewflixnew.R
 import com.example.moviewflixnew.model.MoviesModel
+import com.example.moviewflixnew.view.dialog.DialogMessageError
 import com.example.moviewflixnew.viewModel.DetailMovieViewModel
 import kotlinx.android.synthetic.main.fragment_detail_movies.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -61,6 +62,16 @@ class DetailMoviesFragment(private var movie:MoviesModel) : Fragment() {
                 ).show()
             }
         })
+        detailViewModel.errorApi.observe(viewLifecycleOwner, {
+            if (it.isNotEmpty()){
+                createDialog(it)
+            }
+        })
 
+    }
+
+    private fun createDialog(message: String) {
+        val dialog = DialogMessageError(message)
+        dialog.show(parentFragmentManager,dialog.tag)
     }
 }

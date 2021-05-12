@@ -7,15 +7,39 @@
     android:background="@color/dark_yellow"
     tools:context=".view.fragments.MainFragment">
 
+    <ImageView
+        android:id="@+id/back_pag"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_baseline_arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/flFragment"
+        android:contentDescription="@string/dsc_back_btn" />
+
     <FrameLayout
         android:id="@+id/flFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/dark_yellow"
         app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/back_pag"
+        app:layout_constraintRight_toLeftOf="@+id/next_pag"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/next_pag"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_baseline_arrow_forward_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/flFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:contentDescription="@string/botao_proxima_pagina" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_bar"

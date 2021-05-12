@@ -5,15 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.moviewflixnew.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.fragment_main.*
 
-class MainFragment : Fragment() {
+class MainFragment : Fragment(), View.OnClickListener {
 
-    lateinit var navController: NavController
+    private lateinit var navController: NavController
+    private var numPage:Int = 1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,8 +29,10 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         fragments("list")
         navController = Navigation.findNavController(view)
-        val bttom_bar = view.findViewById<BottomNavigationView>(R.id.bottom_bar)
-        bttom_bar.setOnNavigationItemSelectedListener {
+        view.findViewById<ImageView>(R.id.back_pag).setOnClickListener(this)
+        view.findViewById<ImageView>(R.id.next_pag).setOnClickListener(this)
+        val bottomBar = view.findViewById<BottomNavigationView>(R.id.bottom_bar)
+        bottomBar.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.logout -> {
                     logout()
@@ -35,10 +40,12 @@ class MainFragment : Fragment() {
                 }
                 R.id.list -> {
                     fragments("list")
+                    setVisibilityBtnPag(true)
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.search -> {
                     fragments("search")
+                    setVisibilityBtnPag(false)
                     return@setOnNavigationItemSelectedListener true
                 }
                 else -> {
@@ -61,20 +68,46 @@ class MainFragment : Fragment() {
     private fun fragments(nameFragment: String) {
         when (nameFragment) {
             "list" -> {
-                requireFragmentManager().beginTransaction().apply {
-                    replace(R.id.flFragment, ListMoviesFragment.newInstance())
+                parentFragmentManager.beginTransaction().apply {
+                    replace(R.id.flFragment, ListMoviesFragment.newInstance(numPage))
                     addToBackStack(null)
                     commit()
                 }
             }
 
             "search" -> {
-                requireFragmentManager().beginTransaction().apply {
+                parentFragmentManager.beginTransaction().apply {
                     replace(R.id.flFragment, SearchFragment.newInstance())
                     addToBackStack(null)
                     commit()
                 }
             }
         }
+    }
+
+    override fun onClick(v: View?) {
+        when(v!!.id){
+            R.id.next_pag -> {
+                    numPage += 1
+                    fragments("list")
+            }
+            R.id.back_pag -> {
+                if (numPage > 1){
+                    numPage -= 1
+                    fragments("list")
+                }
+            }
+        }
+    }
+
+    private fun setVisibilityBtnPag(visible:Boolean){
+        if (visible){
+            back_pag.visibility = View.VISIBLE
+            next_pag.visibility = View.VISIBLE
+        }else{
+            back_pag.visibility = View.GONE
+            next_pag.visibility = View.GONE
+        }
+
     }
 }

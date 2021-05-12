@@ -4,6 +4,7 @@ import com.example.moviewflixnew.model.DetailModel
 import com.example.moviewflixnew.model.MoviesTendencyModel
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -13,4 +14,5 @@ interface MovieFlixApiService {
 
     @GET("movie/{id}")
     fun getMovieDetail(@Path("id") id: String?, @Query("api_key") chaveApi:String): Call<DetailModel>
+
 }

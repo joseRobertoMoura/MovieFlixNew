@@ -15,11 +15,14 @@ class ListMoviesViewModel(private val repository: MovieFlixRepository):ViewModel
     val listOfResults: MutableList<MoviesModel> = arrayListOf()
 
     private var totalPages = MutableLiveData<String>()
+    private var error = MutableLiveData<String>()
     private var list = MutableLiveData<List<MoviesModel>>()
     val moviesList: LiveData<List<MoviesModel>>
         get() = list
     val total: LiveData<String>
         get() = totalPages
+    val errorApi:LiveData<String>
+        get() = error
 
     fun init(numPage: String) {
         setList(numPage)
@@ -39,7 +42,15 @@ class ListMoviesViewModel(private val repository: MovieFlixRepository):ViewModel
     }
 
     private fun onRequestError(code: Int?, message: String?) {
-        list.postValue(null)
+        when {
+            code != null -> {
+                error.postValue(code.toString())
+            }
+            message?.isNotEmpty() == true -> {
+                error.postValue("Ops,tivemos um problema. Verifique sua conexão com a internet e " +
+                        "tente Novamente em alguns instantes!")
+            }
+        }
     }
 
     private fun onRequestSuccess(tendency: MoviesTendencyModel) {

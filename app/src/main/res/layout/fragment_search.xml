@@ -7,16 +7,6 @@
     android:background="@color/dark_blue"
     tools:context=".view.fragments.SearchFragment">
 
-    <ImageView
-        android:id="@+id/img_back_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_arrow_back"
-        android:padding="20dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/description_back_btn"
-        app:tint="@color/dark_yellow" />
 
     <SearchView
         android:id="@+id/sv_search_bar"
@@ -27,7 +17,7 @@
         android:queryHint="@string/hint_search_bar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_back_search" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_list_movies_search"

@@ -1,7 +1,6 @@
 package com.example.moviewflixnew.viewModel
 
 import android.content.Context
-import android.graphics.Movie
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,8 +15,11 @@ import kotlinx.coroutines.withContext
 class DetailMovieViewModel(private var repository: MovieFlixRepository):ViewModel() {
 
     private var detailObject = MutableLiveData<DetailModel>()
+    private var error = MutableLiveData<String>()
     val moviesDetail: LiveData<DetailModel>
         get() = detailObject
+    val errorApi:LiveData<String>
+        get() = error
 
     fun init(movie: MoviesModel?, context: Context) {
         val id: String? = movie?.id
@@ -37,7 +39,15 @@ class DetailMovieViewModel(private var repository: MovieFlixRepository):ViewMode
     }
 
     private fun onRequestError(code: Int?, message: String?) {
-        detailObject.postValue(null)
+        when {
+            code != null -> {
+                error.postValue(code.toString())
+            }
+            message?.isNotEmpty() == true -> {
+                error.postValue("Ops,tivemos um problema. Verifique sua conexão com a internet e " +
+                        "tente Novamente em alguns instantes!")
+            }
+        }
     }
 
     private fun onRequestSuccess(movieDetail: DetailModel) {

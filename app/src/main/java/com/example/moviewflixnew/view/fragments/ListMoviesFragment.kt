@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -15,19 +14,16 @@ import com.example.movieflix.model.helper.ClickItemListener
 import com.example.moviewflixnew.R
 import com.example.moviewflixnew.model.MoviesModel
 import com.example.moviewflixnew.view.adapter.MovieFlixAdapter
+import com.example.moviewflixnew.view.dialog.DialogMessageError
 import com.example.moviewflixnew.viewModel.ListMoviesViewModel
-import kotlinx.android.synthetic.main.fragment_list_movies.*
 import kotlinx.android.synthetic.main.fragment_list_movies.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ListMoviesFragment : Fragment(), ClickItemListener, View.OnClickListener {
+class ListMoviesFragment(private var numPage: Int) : Fragment(), ClickItemListener{
 
     lateinit var navController: NavController
     private val listMoviesViewModel: ListMoviesViewModel by viewModel()
     private var totalPages = 0
-    private var numpage = 1
-    lateinit var viewFragment:View
-    lateinit var _contextFragment:Context
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,10 +36,7 @@ class ListMoviesFragment : Fragment(), ClickItemListener, View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         val activity = activity as Context
-        view.findViewById<ImageView>(R.id.back_pag).setOnClickListener(this)
-        view.findViewById<ImageView>(R.id.next_pag).setOnClickListener(this)
-        initViewModel(numpage,view,activity)
-        setup(view,activity)
+        initViewModel(numPage,view,activity)
     }
 
     private fun initViewModel(_numpage:Int,view: View, activity: Context) {
@@ -62,10 +55,20 @@ class ListMoviesFragment : Fragment(), ClickItemListener, View.OnClickListener {
         listMoviesViewModel.total.observe(viewLifecycleOwner, {
             totalPages = it.toInt()
         })
+        listMoviesViewModel.errorApi.observe(viewLifecycleOwner, {
+            if (it.isNotEmpty()){
+                createDialog(it)
+            }
+        })
+    }
+
+    private fun createDialog(message: String) {
+        val dialog = DialogMessageError(message)
+        dialog.show(parentFragmentManager,dialog.tag)
     }
 
     companion object {
-        fun newInstance() = ListMoviesFragment()
+        fun newInstance(numPage:Int) = ListMoviesFragment(numPage)
     }
 
     private fun setAdapter(view: View, activity: Context, list:List<MoviesModel>) {
@@ -75,41 +78,10 @@ class ListMoviesFragment : Fragment(), ClickItemListener, View.OnClickListener {
     }
 
     override fun ClickItemMovie(movie: MoviesModel) {
-        requireFragmentManager().beginTransaction().apply {
+        parentFragmentManager.beginTransaction().apply {
             replace(R.id.flFragment, DetailMoviesFragment.newInstance(movie))
             addToBackStack(null)
             commit()
         }
-    }
-
-    override fun onClick(v: View) {
-        when(v.id){
-            R.id.back_pag -> {
-                if (numpage > 0){
-                    numpage -= 1
-                    initViewModel(numpage,_getViewFragment(),_getContextFragment())
-                }
-            }
-
-            R.id.next_pag -> {
-                if (numpage <= totalPages){
-                    numpage += 1
-                    initViewModel(numpage,_getViewFragment(),_getContextFragment())
-                }
-            }
-        }
-    }
-
-    private fun setup(view:View, activity: Context){
-        this.viewFragment = view
-        this._contextFragment = activity
-    }
-
-    private fun _getViewFragment():View{
-        return this.viewFragment
-    }
-
-    private fun _getContextFragment():Context {
-        return this._contextFragment
     }
 }

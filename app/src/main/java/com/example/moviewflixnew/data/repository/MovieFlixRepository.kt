@@ -30,7 +30,6 @@ class MovieFlixRepository() {
                 response: Response<MoviesTendencyModel>
             ) {
                 val responseCode = response.code()
-
                 if (responseCode == REQUEST_SUCCESS) {
                     val movieList: MoviesTendencyModel = response.body()!!
                     onSuccess.invoke(movieList)
