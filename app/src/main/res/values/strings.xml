@@ -24,4 +24,6 @@
     <string name="botao_proxima_pagina">botao proxima pagina</string>
     <string name="txt_title_dialog">Error:</string>
     <string name="txt_title_btn_dialog">Close</string>
+    <string name="Message_error_api">Ops tivemos um problema, tente novamente mais tarde!</string>
+    <string name="msg_internet_error">Tivemos um problema. Verifique sua conexão com a internet e tente Novamente em alguns instantes!</string>
 </resources>

@@ -7,14 +7,15 @@
     android:layout_gravity="center_horizontal"
     android:background="@color/dark_yellow"
     android:orientation="horizontal"
-    tools:context=".view.fragments.DetailMoviesFragment">
+    tools:context=".ui.view.fragments.DetailMoviesFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/descricao"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
-        android:background="@color/ligh_yellow">
+        android:background="@color/ligh_yellow"
+        android:padding="10dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/movieImage_detail"
@@ -48,8 +49,7 @@
             android:textColor="@color/dark_blue"
             app:layout_constraintBottom_toTopOf="@+id/tv_name_overview"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_name_title"
-            tools:text="Teste" />
+            app:layout_constraintTop_toBottomOf="@id/tv_name_title" />
 
         <TextView
             android:id="@+id/tv_name_overview"
@@ -60,22 +60,30 @@
             android:textColor="@color/dark_blue"
             android:textSize="30sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/tv_overview"
-            app:layout_constraintLeft_toLeftOf="@id/tv_overview"
+            app:layout_constraintBottom_toTopOf="@+id/sv_oververview"
+            app:layout_constraintLeft_toLeftOf="@id/sv_oververview"
             app:layout_constraintTop_toBottomOf="@+id/tv_name_title" />
 
-        <TextView
-            android:id="@+id/tv_overview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="@color/dark_blue"
-            app:layout_constraintEnd_toEndOf="parent"
+        <ScrollView
+            android:id="@+id/sv_oververview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_name_overview"
-            tools:text="Em uma época em que os monstros andam na Terra, a luta da humanidade por seu futuro coloca Godzilla e Kong em rota de colisão que verá as duas forças mais poderosas da natureza no planeta se confrontarem em uma batalha espetacular para as idades. Enquanto Monarch embarca em uma missão perigosa em terreno desconhecido e descobre pistas sobre as origens dos Titãs, uma conspiração humana ameaça tirar as criaturas, boas e más, da face da terra para sempre." />
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_overview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/dark_blue"/>
+
+        </ScrollView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
