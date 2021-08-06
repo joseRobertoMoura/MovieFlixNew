@@ -7,11 +7,15 @@ import com.example.moviewflixnew.ui.model.DetailModel
 
 interface MovieFlixRepository {
 
-    suspend fun requestMoviesTendency(
-        numPage: String
-    ): MoviesTendencyUseCase?
+    fun requestMoviesTendency(
+        numPage: String,
+        callbackSuccess:(success:MoviesTendencyUseCase) -> Unit,
+        callbackError: (error:MoviesTendencyUseCase) -> Unit
+    )
 
-    suspend fun requestMovieDetails(
-        id: String?
-    ):DetailUseCase?
+    fun requestMovieDetails(
+        id: String?,
+        callbackSuccess:(success:DetailUseCase) -> Unit,
+        callbackError: (error:String) -> Unit
+    )
 }

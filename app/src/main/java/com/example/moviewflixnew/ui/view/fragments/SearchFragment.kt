@@ -8,19 +8,32 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movieflix.model.helper.ClickItemListener
 import com.example.moviewflixnew.R
 import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.ui.view.MainActivity
 import com.example.moviewflixnew.ui.view.adapter.MovieFlixAdapter
 import com.example.moviewflixnew.ui.viewModel.ListMoviesViewModel
 import kotlinx.android.synthetic.main.fragment_search.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import javax.inject.Inject
 
 class SearchFragment : Fragment(),ClickItemListener {
 
-    private val listMoviesViewModel: ListMoviesViewModel by viewModel()
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private val listMoviesViewModel by viewModels<ListMoviesViewModel> { viewModelFactory }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        (requireActivity() as MainActivity).mainComponent.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

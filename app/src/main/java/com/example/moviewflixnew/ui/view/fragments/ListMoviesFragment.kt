@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movieflix.model.helper.ClickItemListener
 import com.example.moviewflixnew.R
 import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.ui.view.MainActivity
 import com.example.moviewflixnew.ui.view.adapter.MovieFlixAdapter
 import com.example.moviewflixnew.ui.view.dialog.DialogMessageErrorClass
 import com.example.moviewflixnew.ui.view.fragments.utils.MessagesDialogUtils
@@ -21,14 +24,25 @@ import com.example.moviewflixnew.ui.viewModel.ListMoviesViewModel
 import kotlinx.android.synthetic.main.fragment_list_movies.view.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import javax.inject.Inject
 
 @Suppress("SameParameterValue")
 class ListMoviesFragment(private var numPage: String) : Fragment(){
 
     lateinit var navController: NavController
-    private val listMoviesViewModel: ListMoviesViewModel by viewModel()
-    private var totalPages = 0
+     private var totalPages = 0
     private val messagesDialogUtils:MessagesDialogUtils by inject()
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val listMoviesViewModel by viewModels<ListMoviesViewModel> { viewModelFactory }
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        (requireActivity() as MainActivity).mainComponent.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

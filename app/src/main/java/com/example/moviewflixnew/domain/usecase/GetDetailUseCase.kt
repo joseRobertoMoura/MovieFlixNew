@@ -1,8 +1,12 @@
 package com.example.moviewflixnew.domain.usecase
 
-import com.example.moviewflixnew.ui.model.DetailModel
+import com.example.moviewflixnew.domain.model.DetailUseCase
 
 interface GetDetailUseCase {
 
-    suspend fun getDetail(id:String?): DetailModel
+   fun getDetail(
+      id:String?,
+      callbackSuccess:(success: DetailUseCase) -> Unit,
+      callbackError: (error: String) -> Unit
+   )
 }

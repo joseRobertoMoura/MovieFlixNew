@@ -7,18 +7,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import coil.load
 import com.example.moviewflixnew.R
 import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.ui.view.MainActivity
 import com.example.moviewflixnew.ui.view.dialog.DialogMessageError
 import com.example.moviewflixnew.ui.viewModel.DetailMovieViewModel
 import kotlinx.android.synthetic.main.fragment_detail_movies.*
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import javax.inject.Inject
 
 class DetailMoviesFragment(private var movie:MoviesModel) : Fragment() {
 
-    private val detailViewModel: DetailMovieViewModel by viewModel()
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private val detailViewModel by viewModels<DetailMovieViewModel> {viewModelFactory}
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        (requireActivity() as MainActivity).mainComponent.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

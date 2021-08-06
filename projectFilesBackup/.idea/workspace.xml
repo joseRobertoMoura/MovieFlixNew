@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d5af0559-34af-4851-8918-3ef31dc024e9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviewflixnew/domain/usecase/GetDetailUseCaseImp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviewflixnew/domain/usecase/GetDetailUseCaseImp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviewflixnew/domain/usecase/GetListTendencyUseCaseImp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviewflixnew/domain/usecase/GetListTendencyUseCaseImp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviewflixnew/ui/view/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviewflixnew/ui/view/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviewflixnew/ui/view/fragments/MainFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviewflixnew/ui/view/fragments/MainFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviewflixnew/ui/viewModel/ListMoviesViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviewflixnew/ui/viewModel/ListMoviesViewModel.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[0041325888]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="Kotlin Interface" />
+        <option value="JUnit3 Test Class" />
+        <option value="JUnit4 Test Class" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1sTxxekZxvCQJiCOD8KjXfhM749" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="0041325888" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-05-13T13:03:17.372Z" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android-custom-view/home/jose/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/com/example/moviewflixnew" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NoticeApp" />
+    <property name="multi-representation-preview/home/jose/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
+    <property name="outdated.bundled.kotlin.compiler" value="1.3.72-release-Studio4.1-5" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.moviewflixnew.ui.viewModel" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.moviewflixnew" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/example/moviewflixnew/data/model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="MoviewFlixNew.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListMoviesViewModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MoviewFlixNew.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.moviewflixnew.ui.viewModel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.moviewflixnew.ui.viewModel" />
+      <option name="MAIN_CLASS_NAME" value="com.example.moviewflixnew.ui.viewModel.ListMoviesViewModelTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListMoviesViewModelTest.when ListViewModel init then it should call the useCase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MoviewFlixNew.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.moviewflixnew.ui.viewModel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.moviewflixnew.ui.viewModel" />
+      <option name="MAIN_CLASS_NAME" value="com.example.moviewflixnew.ui.viewModel.ListMoviesViewModelTest" />
+      <option name="METHOD_NAME" value="when ListViewModel init then it should call the useCase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListMoviesViewModelTest.when ListViewModel init then it should call the useCase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MoviewFlixNew.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.moviewflixnew.ui.viewModel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.moviewflixnew.ui.viewModel" />
+      <option name="MAIN_CLASS_NAME" value="com.example.moviewflixnew.ui.viewModel.ListMoviesViewModelTest" />
+      <option name="METHOD_NAME" value="when ListViewModel init then it should call the useCase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListMoviesViewModelTest.when viewmodel model fetches data then it should call the repository" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MoviewFlixNew.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.moviewflixnew.ui.viewModel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.moviewflixnew.ui.viewModel" />
+      <option name="MAIN_CLASS_NAME" value="com.example.moviewflixnew.ui.viewModel.ListMoviesViewModelTest" />
+      <option name="METHOD_NAME" value="when viewmodel model fetches data then it should call the repository" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListMoviesViewModelTest.when viewmodel model fetches data then it should call the repository" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MoviewFlixNew.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.moviewflixnew.ui.viewModel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.moviewflixnew.ui.viewModel" />
+      <option name="MAIN_CLASS_NAME" value="com.example.moviewflixnew.ui.viewModel.ListMoviesViewModelTest" />
+      <option name="METHOD_NAME" value="when viewmodel model fetches data then it should call the repository" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d5af0559-34af-4851-8918-3ef31dc024e9" name="Default Changelist" comment="" />
+      <created>1620910628975</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620910628975</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1625" y="0" width="826" height="736" key="#ListMoviesViewModelTest.when_viewmodel_model_fetches_data_then_it_should_call_the_repository" timestamp="1621283709973">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state x="1625" y="0" width="826" height="736" key="#ListMoviesViewModelTest.when_viewmodel_model_fetches_data_then_it_should_call_the_repository/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621283709973" />
+    <state x="1829" y="86" width="418" height="556" key="#com.intellij.ide.util.MemberChooser" timestamp="1621205019760">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state x="1829" y="86" width="418" height="556" key="#com.intellij.ide.util.MemberChooser/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621205019760" />
+    <state x="1578" y="294" width="967" height="145" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1621103718867">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state x="1578" y="294" width="967" height="145" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621103718867" />
+    <state x="1767" y="157" width="531" height="408" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1621204928727">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state x="1767" y="157" width="531" height="408" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621204928727" />
+    <state x="1776" y="117" width="524" height="494" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1621276196018">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state x="1776" y="117" width="524" height="494" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621276196018" />
+    <state x="444" y="142" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1621972995736">
+      <screen x="0" y="0" width="1360" height="736" />
+    </state>
+    <state x="444" y="142" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/1360.0.1366.768/0.0.1360.736@0.0.1360.736" timestamp="1621972995736" />
+    <state x="1806" y="148" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621276068911" />
+    <state x="1626" y="125" width="824" height="478" key="AndroidCreateResourceDirectoryDialog" timestamp="1621011582053">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state x="1626" y="125" width="824" height="478" key="AndroidCreateResourceDirectoryDialog/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621011582053" />
+    <state x="1878" y="160" width="319" height="408" key="AndroidCreateXmlResourceDialog" timestamp="1621017161844">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state x="1878" y="160" width="319" height="408" key="AndroidCreateXmlResourceDialog/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621017161844" />
+    <state x="464" y="120" width="424" height="478" key="FileChooserDialogImpl" timestamp="1622227469822">
+      <screen x="0" y="0" width="1360" height="736" />
+    </state>
+    <state x="464" y="120" width="424" height="478" key="FileChooserDialogImpl/1360.0.1366.768/0.0.1360.736@0.0.1360.736" timestamp="1622227469822" />
+    <state x="1826" y="125" width="424" height="478" key="FileChooserDialogImpl/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621346145094" />
+    <state width="1322" height="176" key="GridCell.Tab.0.bottom" timestamp="1621346147608">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state width="1322" height="176" key="GridCell.Tab.0.bottom/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621346147608" />
+    <state width="1322" height="176" key="GridCell.Tab.0.center" timestamp="1621346147608">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state width="1322" height="176" key="GridCell.Tab.0.center/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621346147608" />
+    <state width="1322" height="176" key="GridCell.Tab.0.left" timestamp="1621346147608">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state width="1322" height="176" key="GridCell.Tab.0.left/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621346147608" />
+    <state width="1322" height="176" key="GridCell.Tab.0.right" timestamp="1621346147608">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state width="1322" height="176" key="GridCell.Tab.0.right/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621346147608" />
+    <state x="1545" y="6" key="SettingsEditor" timestamp="1621451773865">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/1360.0.1366.768/0.0.1360.736@0.0.1360.736" timestamp="1620910880785" />
+    <state x="1545" y="6" key="SettingsEditor/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621451773865" />
+    <state x="1839" y="145" width="387" height="432" key="chooseDestDirectoryDialog" timestamp="1621275343885">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state x="1839" y="145" width="387" height="432" key="chooseDestDirectoryDialog/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621275343885" />
+    <state x="1841" y="284" width="403" height="166" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1621275176695">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state x="1841" y="284" width="403" height="166" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621275176695" />
+    <state x="1766" y="132" width="544" height="464" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog" timestamp="1621275343913">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state x="1766" y="132" width="544" height="464" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621275343913" />
+    <state x="1765" y="141" width="545" height="445" key="refactoring.ChangeSignatureDialog" timestamp="1621098371935">
+      <screen x="1360" y="0" width="1366" height="768" />
+    </state>
+    <state x="1765" y="141" width="545" height="445" key="refactoring.ChangeSignatureDialog/1360.0.1366.768/0.0.1360.736@1360.0.1366.768" timestamp="1621098371935" />
+  </component>
+</project>

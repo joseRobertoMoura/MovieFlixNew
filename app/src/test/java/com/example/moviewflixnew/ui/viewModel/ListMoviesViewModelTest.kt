@@ -69,7 +69,7 @@ class ListMoviesViewModelTest{
 
                 viewModel.init(numPage)
 
-                coVerify { responseMoviesTendency.result}
+                coVerify { responseMoviesTendency?.result}
                 coVerify { observerList.onChanged(list)}
             }
         }

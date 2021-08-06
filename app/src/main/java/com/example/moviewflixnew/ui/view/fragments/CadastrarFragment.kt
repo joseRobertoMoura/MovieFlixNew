@@ -1,5 +1,6 @@
 package com.example.moviewflixnew.ui.view.fragments
 
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.widget.AppCompatTextView
+import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.moviewflixnew.R
+import com.example.moviewflixnew.ui.view.MainActivity
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
@@ -18,13 +22,24 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 class CadastrarFragment : Fragment(), View.OnClickListener {
 
     lateinit var navController: NavController
-    lateinit var tv_alerta_cadastrar:TextView
+    lateinit var tv_alerta_cadastrar:AppCompatTextView
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_cadastrar, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        (requireActivity() as MainActivity).mainComponent.inject(this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

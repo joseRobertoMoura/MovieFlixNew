@@ -1,6 +1,5 @@
 package com.example.moviewflixnew.di
 
-import com.example.moviewflixnew.data.api.MovieFlixApi
 import com.example.moviewflixnew.data.repository.MovieFlixRepositoryImp
 import com.example.moviewflixnew.domain.usecase.GetDetailUseCaseImp
 import com.example.moviewflixnew.domain.usecase.GetListTendencyUseCaseImp
@@ -15,7 +14,6 @@ val mainModule = module {
         movieFlixApiTask = get()
     ) }
     factory<MessagesDialogUtils> { MessagesDialogUtils() }
-    factory<MovieFlixApi> { MovieFlixApi() }
 
     single { GetListTendencyUseCaseImp(
         movieFlixRepository = get()

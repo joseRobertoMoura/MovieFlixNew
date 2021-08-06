@@ -1,5 +1,6 @@
 package com.example.moviewflixnew.ui.view.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -10,10 +11,18 @@ import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.moviewflixnew.R
+import com.example.moviewflixnew.ui.view.MainActivity
 
 class SplashScreen : Fragment() {
 
     lateinit var navController: NavController
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        (requireActivity() as MainActivity).mainComponent.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

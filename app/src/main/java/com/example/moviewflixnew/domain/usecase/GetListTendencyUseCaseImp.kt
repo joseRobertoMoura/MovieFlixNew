@@ -1,15 +1,20 @@
 package com.example.moviewflixnew.domain.usecase
 
 import com.example.moviewflixnew.data.repository.MovieFlixRepositoryImp
-import com.example.moviewflixnew.domain.model.toMoviesModelUseCase
-import com.example.moviewflixnew.ui.model.MoviesTendencyModel
+import com.example.moviewflixnew.domain.model.MoviesTendencyUseCase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class GetListTendencyUseCaseImp(
+class GetListTendencyUseCaseImp @Inject constructor(
     private val movieFlixRepository: MovieFlixRepositoryImp
 ):GetListTendencyUseCase {
 
-    override suspend fun getResponseMoviesTendency(numPage: String):MoviesTendencyModel{
-        return movieFlixRepository.requestMoviesTendency(numPage)!!.toMoviesModelUseCase()
-    }
+    override fun getResponseMoviesTendency(
+        numPage: String,
+        callbackSuccess: (success: MoviesTendencyUseCase) -> Unit,
+        callbackError: (error: MoviesTendencyUseCase) -> Unit
+    ) = movieFlixRepository.requestMoviesTendency(numPage,callbackSuccess,callbackError)
 
 }

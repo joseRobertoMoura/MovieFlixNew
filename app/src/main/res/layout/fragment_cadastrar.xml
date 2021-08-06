@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_yellow"
+    android:background="@drawable/bg_gradiente_cadastro"
     tools:context=".ui.view.fragments.CadastrarFragment">
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/description_back_btn" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_title_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_title_cadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_login" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_email_cadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="20dp"
         android:autofillHints="E-mail Cadastro"
-        android:background="@color/dark_blue"
+        android:background="@drawable/bg_et_cadastro"
         android:hint="@string/hint_login_email"
         android:inputType="textWebEmailAddress"
         android:padding="15dp"
@@ -58,7 +58,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_cadastrar" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_senha_cadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:autofillHints="Senha Cadastro"
-        android:background="@color/dark_blue"
+        android:background="@drawable/bg_et_cadastro"
         android:hint="@string/hint_login_senha"
         android:inputType="textPassword"
         android:padding="15dp"
@@ -75,30 +75,32 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_email_cadastrar" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_alerta_cadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_margin="20dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:visibility="gone"
         android:textColor="@color/red"
         android:textSize="20sp"
+        android:background="@drawable/bg_alert"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_senha_cadastrar" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_entrar_cadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/dark_blue"
+        android:background="@drawable/bg_button_cadastro"
         android:text="@string/txt_btn_cadastrar"
         android:textAllCaps="false"
-        android:textColor="@color/dark_yellow"
+        android:textColor="@color/dark_blue"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

@@ -6,7 +6,7 @@
     <string name="hint_login_email">E-mail</string>
     <string name="hint_login_senha">Senha</string>
     <string name="btn_text_login">Entrar</string>
-    <string name="tv_cadastrar_login">Ainda não é cadastrado? Clique aqui.</string>
+    <string name="tv_cadastrar_login">Ainda não é cadastrado??<br/> Clique aqui!</string>
     <string name="msg_senha_incorreta">Senha incorreta!</string>
     <string name="msg_erro_login">Erro ao efeturar o login</string>
     <string name="msg_campos_vazios">Favor preencha todos os campos</string>

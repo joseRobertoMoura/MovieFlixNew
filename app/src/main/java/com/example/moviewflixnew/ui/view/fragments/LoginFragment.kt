@@ -10,22 +10,31 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatEditText
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.moviewflixnew.R
+import com.example.moviewflixnew.ui.view.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 
 class LoginFragment : Fragment(), View.OnClickListener {
 
     lateinit var navController: NavController
-    lateinit var tv_alerta_login:TextView
+    lateinit var tv_alerta_login:AppCompatTextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_login, container, false)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        (requireActivity() as MainActivity).mainComponent.inject(this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,8 +53,8 @@ class LoginFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btn_entrar_login -> {
-                val email = view?.findViewById<EditText>(R.id.edt_email_login)?.text.toString()
-                val senha = view?.findViewById<EditText>(R.id.edt_senha_login)?.text.toString()
+                val email = view?.findViewById<AppCompatEditText>(R.id.edt_email_login)?.text.toString()
+                val senha = view?.findViewById<AppCompatEditText>(R.id.edt_senha_login)?.text.toString()
                 val activity = activity as Context
 
                 if (email.isEmpty() || senha.isEmpty()) {

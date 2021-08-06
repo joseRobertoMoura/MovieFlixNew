@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/dark_blue"
+    android:background="@drawable/gradiente_bg_login"
     tools:context=".ui.view.fragments.LoginFragment">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_title_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_email_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,65 +28,83 @@
         android:layout_marginEnd="20dp"
         android:padding="15dp"
         android:hint="@string/hint_login_email"
-        android:background="@color/ligh_yellow"
+        android:textColorHint="@color/dark_blue"
+        android:background="@drawable/bg_et_login"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_login"
         android:autofillHints="E-mail Login"
         android:inputType="textWebEmailAddress" />
 
-    <EditText
-        android:id="@+id/edt_senha_login"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtinput_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:padding="15dp"
-        android:hint="@string/hint_login_senha"
-        android:background="@color/ligh_yellow"
+        app:hintEnabled="false"
+        android:textColorHint="@color/dark_blue"
+        app:counterTextColor="@color/dark_blue"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/dark_blue"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_email_login"
-        android:autofillHints="Senha Login"
-        android:inputType="textPassword"/>
+        app:layout_constraintTop_toBottomOf="@+id/edt_email_login">
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_senha_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:hint="@string/hint_login_senha"
+            android:textColorHint="@color/dark_blue"
+            android:background="@drawable/bg_et_login"
+            android:autofillHints="Senha Login"
+            android:inputType="textPassword"/>
 
-    <TextView
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_alerta_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_margin="20dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:visibility="gone"
         android:textColor="@color/red"
         android:textSize="20sp"
+        android:background="@drawable/bg_alert"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_senha_login"/>
+        app:layout_constraintBottom_toTopOf="@+id/btn_entrar_login"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_entrar_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:text="@string/btn_text_login"
         android:textColor="@color/dark_blue"
         android:textAllCaps="false"
         android:textSize="18sp"
-        android:backgroundTint="@color/dark_yellow"
+        android:background="@drawable/bg_button_login"
+        app:layout_constraintTop_toBottomOf="@+id/txtinput_password"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_alerta_login"/>
+        app:layout_constraintBottom_toTopOf="@+id/btn_cadastrar_login"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/btn_cadastrar_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tv_cadastrar_login"
         android:textColor="@color/dark_yellow"
-        android:textSize="18sp"
+        android:textSize="20sp"
+        android:lines="2"
+        android:textAlignment="center"
         android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
