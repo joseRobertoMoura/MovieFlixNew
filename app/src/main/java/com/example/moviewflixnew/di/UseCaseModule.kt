@@ -1,11 +1,9 @@
 package com.example.moviewflixnew.di
 
-import com.example.moviewflixnew.data.repository.MovieFlixRepository
-import com.example.moviewflixnew.data.repository.MovieFlixRepositoryImp
-import com.example.moviewflixnew.domain.usecase.GetDetailUseCase
-import com.example.moviewflixnew.domain.usecase.GetDetailUseCaseImp
-import com.example.moviewflixnew.domain.usecase.GetListTendencyUseCase
-import com.example.moviewflixnew.domain.usecase.GetListTendencyUseCaseImp
+import com.example.moviewflixnew.usecase.details.GetDetailUseCase
+import com.example.moviewflixnew.usecase.details.GetDetailUseCaseImp
+import com.example.moviewflixnew.usecase.tendency.GetListTendencyUseCase
+import com.example.moviewflixnew.usecase.tendency.GetListTendencyUseCaseImp
 import dagger.Binds
 import dagger.Module
 import javax.inject.Singleton

@@ -1,11 +1,11 @@
 package com.example.moviewflixnew.di
 
-import com.example.moviewflixnew.data.repository.MovieFlixRepositoryImp
-import com.example.moviewflixnew.domain.usecase.GetDetailUseCaseImp
-import com.example.moviewflixnew.domain.usecase.GetListTendencyUseCaseImp
-import com.example.moviewflixnew.ui.view.fragments.utils.MessagesDialogUtils
-import com.example.moviewflixnew.ui.viewModel.DetailMovieViewModel
-import com.example.moviewflixnew.ui.viewModel.ListMoviesViewModel
+import com.example.moviewflixnew.repository.MovieFlixRepositoryImp
+import com.example.moviewflixnew.usecase.details.GetDetailUseCaseImp
+import com.example.moviewflixnew.usecase.tendency.GetListTendencyUseCaseImp
+import com.example.moviewflixnew.ui.utils.MessagesDialogUtils
+import com.example.moviewflixnew.ui.details.DetailMovieViewModel
+import com.example.moviewflixnew.ui.listMovies.ListMoviesViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

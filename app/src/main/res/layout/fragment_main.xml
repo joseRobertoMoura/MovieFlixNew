@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg_gradiente_cadastro"
-    tools:context=".ui.view.fragments.MainFragment">
+    tools:context=".ui.main.MainFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/back_pag"

@@ -2,7 +2,8 @@ package com.example.moviewflixnew.ui.viewModel
 
 import androidx.lifecycle.Observer
 import com.example.moviewflixnew.InstantTaskExecutorMovieRule
-import com.example.moviewflixnew.domain.usecase.GetListTendencyUseCaseImp
+import com.example.moviewflixnew.usecase.tendency.GetListTendencyUseCaseImp
+import com.example.moviewflixnew.ui.listMovies.ListMoviesViewModel
 import com.example.moviewflixnew.ui.model.MoviesModel
 import com.example.moviewflixnew.ui.model.MoviesTendencyModel
 import io.mockk.*
@@ -28,7 +29,7 @@ class ListMoviesViewModelTest{
 
     private val testeCoroutineDispatcher = TestCoroutineDispatcher()
 
-    lateinit var viewModel:ListMoviesViewModel
+    lateinit var viewModel: ListMoviesViewModel
     var numPage:String = "1"
 
     @Mock

@@ -1,7 +1,7 @@
 package com.example.moviewflixnew.di
 
-import com.example.moviewflixnew.data.repository.MovieFlixRepository
-import com.example.moviewflixnew.data.repository.MovieFlixRepositoryImp
+import com.example.moviewflixnew.repository.MovieFlixRepository
+import com.example.moviewflixnew.repository.MovieFlixRepositoryImp
 import dagger.Binds
 import dagger.Module
 import javax.inject.Singleton

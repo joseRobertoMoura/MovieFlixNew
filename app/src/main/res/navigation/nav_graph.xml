@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.moviewflixnew.ui.view.fragments.LoginFragment"
+        android:name="com.example.moviewflixnew.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/listMoviesFragment"
-        android:name="com.example.moviewflixnew.ui.view.fragments.ListMoviesFragment"
+        android:name="com.example.moviewflixnew.ui.listMovies.ListMoviesFragment"
         android:label="fragment_list_movies"
         tools:layout="@layout/fragment_list_movies" >
         <action
@@ -28,12 +28,12 @@
     </fragment>
     <fragment
         android:id="@+id/detailMoviesFragment"
-        android:name="com.example.moviewflixnew.ui.view.fragments.DetailMoviesFragment"
+        android:name="com.example.moviewflixnew.ui.details.DetailMoviesFragment"
         android:label="fragment_detail_movies"
         tools:layout="@layout/fragment_detail_movies" />
     <fragment
         android:id="@+id/splashScreen"
-        android:name="com.example.moviewflixnew.ui.view.fragments.SplashScreen"
+        android:name="com.example.moviewflixnew.ui.SplashScreen"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.moviewflixnew.ui.view.fragments.SearchFragment"
+        android:name="com.example.moviewflixnew.ui.search.SearchFragment"
         android:label="fragment_config"
         tools:layout="@layout/fragment_search" >
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.moviewflixnew.ui.view.fragments.MainFragment"
+        android:name="com.example.moviewflixnew.ui.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/cadastrarFragment"
-        android:name="com.example.moviewflixnew.ui.view.fragments.CadastrarFragment"
+        android:name="com.example.moviewflixnew.ui.cadastrar.CadastrarFragment"
         android:label="fragment_cadastrar"
         tools:layout="@layout/fragment_cadastrar" >
         <action

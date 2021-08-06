@@ -7,7 +7,7 @@
     android:layout_gravity="center_horizontal"
     android:background="@drawable/bg_gradiente_cadastro"
     android:orientation="horizontal"
-    tools:context=".ui.view.fragments.DetailMoviesFragment">
+    tools:context=".ui.details.DetailMoviesFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/descricao"
