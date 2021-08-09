@@ -1,5 +1,7 @@
 package com.example.moviewflixnew.di
 
+import com.example.moviewflixnew.usecase.cadastro.CadastroUseCase
+import com.example.moviewflixnew.usecase.cadastro.CadastroUseCaseImpl
 import com.example.moviewflixnew.usecase.details.GetDetailUseCase
 import com.example.moviewflixnew.usecase.details.GetDetailUseCaseImp
 import com.example.moviewflixnew.usecase.login.LoginUseCase
@@ -24,4 +26,8 @@ abstract class UseCaseModule {
     @Singleton
     @Binds
     abstract fun provideLoginUseCase(useCase: LoginUseCaseImpl) : LoginUseCase
+
+    @Singleton
+    @Binds
+    abstract fun provideCadastroUseCase(useCase: CadastroUseCaseImpl) : CadastroUseCase
 }

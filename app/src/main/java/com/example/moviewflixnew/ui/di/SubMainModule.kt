@@ -2,6 +2,7 @@ package com.example.moviewflixnew.ui.di
 
 import androidx.lifecycle.ViewModel
 import com.example.moviewflixnew.di.ViewModelKey
+import com.example.moviewflixnew.ui.cadastrar.CadastroViewModel
 import com.example.moviewflixnew.ui.details.DetailMovieViewModel
 import com.example.moviewflixnew.ui.listMovies.ListMoviesViewModel
 import com.example.moviewflixnew.ui.login.LoginViewModel
@@ -27,4 +28,9 @@ interface SubMainModule {
     @IntoMap
     @ViewModelKey(LoginViewModel::class)
     fun bindLoginViewModel(viewModel: LoginViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CadastroViewModel::class)
+    fun bindCadastroViewModel(viewModel: CadastroViewModel): ViewModel
 }

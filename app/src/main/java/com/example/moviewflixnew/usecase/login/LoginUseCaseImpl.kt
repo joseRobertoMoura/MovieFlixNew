@@ -5,7 +5,9 @@ import com.example.moviewflixnew.repository.login.MovieFlixLogin
 import com.example.moviewflixnew.repository.login.MovieFlixLoginImpl
 import javax.inject.Inject
 
-class LoginUseCaseImpl @Inject constructor(private val repository:MovieFlixLoginImpl) : LoginUseCase{
+class LoginUseCaseImpl @Inject constructor(
+    private val repository:MovieFlixLoginImpl
+    ) : LoginUseCase{
     override suspend fun executeLoginFireBase(
         dataLogin: LoginFireBaseModel,
         callbackSuccess:() -> Unit,
