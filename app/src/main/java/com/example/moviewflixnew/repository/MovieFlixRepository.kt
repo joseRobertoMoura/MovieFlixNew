@@ -5,15 +5,15 @@ import com.example.moviewflixnew.data.model.MoviesTendencyResponse
 
 interface MovieFlixRepository {
 
-    fun requestMoviesTendency(
+    suspend fun requestMoviesTendency(
         numPage: String,
-        callbackSuccess:(success:MoviesTendencyResponse) -> Unit,
-        callbackError: (error:MoviesTendencyResponse) -> Unit
+        callbackSuccess:(success:MoviesTendencyResponse?) -> Unit,
+        callbackError: (error:MoviesTendencyResponse?) -> Unit
     )
 
-    fun requestMovieDetails(
+    suspend fun requestMovieDetails(
         id: String?,
-        callbackSuccess:(success:DetailResponse) -> Unit,
-        callbackError: (error:String) -> Unit
+        callbackSuccess:(success:DetailResponse?) -> Unit,
+        callbackError: (error:String?) -> Unit
     )
 }

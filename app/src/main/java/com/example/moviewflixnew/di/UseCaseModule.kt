@@ -2,6 +2,8 @@ package com.example.moviewflixnew.di
 
 import com.example.moviewflixnew.usecase.details.GetDetailUseCase
 import com.example.moviewflixnew.usecase.details.GetDetailUseCaseImp
+import com.example.moviewflixnew.usecase.login.LoginUseCase
+import com.example.moviewflixnew.usecase.login.LoginUseCaseImpl
 import com.example.moviewflixnew.usecase.tendency.GetListTendencyUseCase
 import com.example.moviewflixnew.usecase.tendency.GetListTendencyUseCaseImp
 import dagger.Binds
@@ -17,6 +19,9 @@ abstract class UseCaseModule {
 
     @Singleton
     @Binds
-    abstract fun provideTendencyUseCase(repository: GetListTendencyUseCaseImp): GetListTendencyUseCase
+    abstract fun provideTendencyUseCase(useCase: GetListTendencyUseCaseImp): GetListTendencyUseCase
 
+    @Singleton
+    @Binds
+    abstract fun provideLoginUseCase(useCase: LoginUseCaseImpl) : LoginUseCase
 }

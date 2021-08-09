@@ -4,9 +4,9 @@ import com.example.moviewflixnew.data.model.DetailResponse
 
 interface GetDetailUseCase {
 
-   fun getDetail(
+   suspend fun getDetail(
       id:String?,
-      callbackSuccess:(success: DetailResponse) -> Unit,
-      callbackError: (error: String) -> Unit
+      callbackSuccess:(success: DetailResponse?) -> Unit,
+      callbackError: (error: String?) -> Unit
    )
 }

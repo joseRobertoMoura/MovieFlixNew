@@ -44,8 +44,10 @@ class MainFragment : Fragment(), View.OnClickListener {
         backPressed()
         fragments("list")
         navController = Navigation.findNavController(view)
+
         view.findViewById<ImageView>(R.id.back_pag).setOnClickListener(this)
         view.findViewById<ImageView>(R.id.next_pag).setOnClickListener(this)
+
         val bottomBar = view.findViewById<BottomNavigationView>(R.id.bottom_bar)
         bottomBar.setOnNavigationItemSelectedListener {
             when (it.itemId) {

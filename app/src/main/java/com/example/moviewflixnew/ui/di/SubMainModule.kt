@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.example.moviewflixnew.di.ViewModelKey
 import com.example.moviewflixnew.ui.details.DetailMovieViewModel
 import com.example.moviewflixnew.ui.listMovies.ListMoviesViewModel
+import com.example.moviewflixnew.ui.login.LoginViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -22,4 +23,8 @@ interface SubMainModule {
     @ViewModelKey(DetailMovieViewModel::class)
     fun bindDetailMoviesViewModel(viewModel: DetailMovieViewModel): ViewModel
 
+    @Binds
+    @IntoMap
+    @ViewModelKey(LoginViewModel::class)
+    fun bindLoginViewModel(viewModel: LoginViewModel): ViewModel
 }

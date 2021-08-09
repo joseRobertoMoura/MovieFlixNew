@@ -1,6 +1,7 @@
 package com.example.moviewflixnew.ui.login
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,14 +11,24 @@ import android.widget.*
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.moviewflixnew.R
+import com.example.moviewflixnew.data.model.login.LoginFireBaseModel
 import com.example.moviewflixnew.ui.MainActivity
+import com.example.moviewflixnew.ui.details.DetailMovieViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import javax.inject.Inject
 
 class LoginFragment : Fragment() {
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private val loginViewModel by viewModels<LoginViewModel> {viewModelFactory}
 
     private lateinit var navController: NavController
     private lateinit var tv_alerta_login:AppCompatTextView
@@ -57,20 +68,41 @@ class LoginFragment : Fragment() {
     private fun eventClick(context: Context) {
         btnEntrar.setOnClickListener {
             val email = email.text.toString()
-            val senha = senha.text.toString()
+            val password = senha.text.toString()
 
-            if (email.isEmpty() || senha.isEmpty()) {
+            if (email.isEmpty() || password.isEmpty()) {
                 tv_alerta_login.visibility = View.VISIBLE
                 tv_alerta_login.text = getString(R.string.msg_campos_vazios)
             } else {
                 progressBar.visibility = View.VISIBLE
-                Login(email, senha, context)
+                initViewModel(email,password,context)
             }
         }
 
       btnCadastrar.setOnClickListener {
             navController.navigate(R.id.action_loginFragment_to_cadastrarFragment)
         }
+    }
+
+    private fun initViewModel(email: String, password: String, context: Context) {
+        loginViewModel.init(
+            LoginFireBaseModel(
+            email,
+            password,
+                ""
+            )
+        )
+        loginViewModel.loginActionView.observe(viewLifecycleOwner, { state ->
+            when(state){
+                is LoginActionView.LoginSuccess -> {
+                    navController.navigate(R.id.action_loginFragment_to_mainFragment)
+                }
+
+                is LoginActionView.LoginError -> {
+                    Toast.makeText(context,state.error,Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
     }
 
     private fun initView(view:View) {
@@ -84,28 +116,6 @@ class LoginFragment : Fragment() {
 
     companion object {
         fun newInstance() = LoginFragment()
-    }
-
-    private fun Login(email: String, senha: String, activity: Context){
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha)
-            .addOnCompleteListener {
-                if (it.isSuccessful) {
-                    Toast.makeText(activity, "Login efetuado com sucesso!", Toast.LENGTH_SHORT)
-                        .show()
-                    navController.navigate(R.id.action_loginFragment_to_mainFragment)
-                }
-            }.addOnFailureListener {
-                tv_alerta_login.visibility = View.VISIBLE
-                when (it) {
-                    is FirebaseAuthWeakPasswordException -> {
-                        tv_alerta_login.text = getString(R.string.msg_senha_incorreta)
-                    }
-                    else -> {
-                        tv_alerta_login.text = getString(R.string.msg_erro_login)
-                    }
-                }
-            }
-        progressBar.visibility = View.GONE
     }
 
     private fun verificaUsuarioLogado(){

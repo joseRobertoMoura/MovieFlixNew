@@ -17,7 +17,9 @@ interface AppComponent {
 
     @Component.Factory
     interface factory {
-        fun create(@BindsInstance applicationContext: Context): AppComponent
+        fun create(
+            @BindsInstance applicationContext: Context
+        ): AppComponent
     }
 
     fun mainComponent(): MainComponent.Factory

@@ -49,34 +49,37 @@ class DetailMoviesFragment(private var movie:MoviesModel) : Fragment() {
 
     private fun bindViews(activity:Context) {
         detailViewModel.init(movie, activity)
-        detailViewModel.moviesDetail.observe(viewLifecycleOwner) {
-            if (it != null){
-                movieImage_detail.load(
-                    "https://image.tmdb.org/t/p/w500"
-                            + it.poster_path
-                ) {
-                    placeholder(R.drawable.ic_baseline_image_24)
-                    fallback(R.drawable.ic_baseline_image_24)
+        detailViewModel.detailsViewAction.observe(viewLifecycleOwner) { state ->
+            when(state){
+                is DetailsActionView.Success -> {
+                    movieImage_detail.load(
+                        "https://image.tmdb.org/t/p/w500"
+                                + state.responseSucess?.poster_path
+                    ) {
+                        placeholder(R.drawable.ic_baseline_image_24)
+                        fallback(R.drawable.ic_baseline_image_24)
+                    }
+                    if (state.responseSucess?.original_title !=  null) {
+                        tv_title.text =
+                            state.responseSucess?.original_title
+                    } else if (state.responseSucess?.original_name != null) {
+                        tv_title.text =
+                            state.responseSucess?.original_name
+                    }
+                    tv_overview.text = state.responseSucess?.overview
                 }
-                if (it.original_title !=  null) {
-                    tv_title.text =
-                        it.original_title
-                } else if (it.original_name != null) {
-                    tv_title.text =
-                        it.original_name
+
+                is DetailsActionView.Error -> {
+                        createDialog(state.error.toString())
                 }
-                tv_overview.text = it.overview
-            }else {
-                Toast.makeText(
-                    activity,
-                    "Ops tivemos um problema, tente novamente em alguns instantes.",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-        }
-        detailViewModel.errorApi.observe(viewLifecycleOwner) {
-            if (it.isNotEmpty()){
-                createDialog(it)
+
+                else -> {
+                    Toast.makeText(
+                        activity,
+                        "Ops tivemos um problema, tente novamente em alguns instantes.",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
             }
         }
 
