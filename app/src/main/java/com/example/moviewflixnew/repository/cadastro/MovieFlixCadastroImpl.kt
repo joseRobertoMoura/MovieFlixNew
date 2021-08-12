@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import com.example.moviewflixnew.R
 import com.example.moviewflixnew.data.model.cadastro.CadastroModel
+import com.example.moviewflixnew.ui.utils.preferences.ManagmentPreferences
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
@@ -25,7 +26,19 @@ class MovieFlixCadastroImpl @Inject constructor() : MovieFlixCadastro {
             .createUserWithEmailAndPassword(cadastroModel.email, cadastroModel.password)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
-                    callbackSucess.invoke("Cadastro Realizado com sucesso")
+                    FirebaseDatabase.getInstance().getReference()
+                        .child("cadastro")
+                        .child(cadastroModel.email.replace(".",""))
+                        .setValue(cadastroModel)
+                        .addOnCompleteListener {
+                            if (it.isSuccessful){
+                                callbackSucess.invoke("Sucesso Db")
+                            }else{
+                                callbackError.invoke("Error Db")
+                            }
+                        }.addOnFailureListener {
+                            callbackError.invoke("Error Db")
+                        }
                 }
             }.addOnFailureListener {
                 when (it) {

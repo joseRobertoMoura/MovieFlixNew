@@ -16,9 +16,7 @@ import com.example.moviewflixnew.R
 import com.example.moviewflixnew.ui.MainActivity
 import com.example.moviewflixnew.ui.details.DetailMoviesFragment
 import com.example.moviewflixnew.ui.favorites.adapter.FavoritesAdapter
-import com.example.moviewflixnew.ui.listMovies.adapter.MovieFlixAdapter
 import com.example.moviewflixnew.ui.model.MoviesModel
-import kotlinx.android.synthetic.main.fragment_list_movies.view.*
 import javax.inject.Inject
 
 class FavoritesFragment() : Fragment() {
@@ -60,13 +58,24 @@ class FavoritesFragment() : Fragment() {
     private fun setAdapter(view: View, activity: Context, list:MutableList<MoviesModel?>) {
         recyclerView = view.findViewById(R.id.rv_list_favorites)
         recyclerView.layoutManager = LinearLayoutManager(activity)
-        recyclerView.adapter = FavoritesAdapter(list, object:ClickItemListener{
+        recyclerView.adapter = FavoritesAdapter(list,
+            object:ClickItemListener{
             override fun ClickItemMovie(movie: MoviesModel) {
                 favoritesViewModel.initDelete(movie,activity)
                 Toast.makeText(activity,"Removido com sucesso!", Toast.LENGTH_SHORT).show()
                 initViewModel(view,activity)
             }
-        })
+        },
+            object : ClickItemListener {
+                override fun ClickItemMovie(movie: MoviesModel) {
+                    parentFragmentManager.beginTransaction().apply {
+                        replace(R.id.flFragment, DetailMoviesFragment.newInstance(movie))
+                        addToBackStack(null)
+                        commit()
+                    }
+                }
+
+            })
     }
 
     override fun onAttach(context: Context) {

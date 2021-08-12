@@ -13,7 +13,8 @@ import com.example.moviewflixnew.ui.model.MoviesModel
 
 class FavoritesAdapter(
     private var list: MutableList<MoviesModel?>,
-    private var listener: ClickItemListener
+    private var listener: ClickItemListener,
+    private var listenerCard: ClickItemListener
 ) :
     RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHolder>() {
 
@@ -24,7 +25,7 @@ class FavoritesAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritesViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.favorite_item, parent, false)
-        return FavoritesViewHolder(view,list,listener)
+        return FavoritesViewHolder(view,list,listener, listenerCard)
     }
 
     override fun onBindViewHolder(holder: FavoritesViewHolder, position: Int) {
@@ -38,15 +39,19 @@ class FavoritesAdapter(
     inner class FavoritesViewHolder(
         itemView: View,
         private var list: MutableList<MoviesModel?>,
-        private var listener: ClickItemListener
+        private var listener: ClickItemListener,
+        private var listenerCard: ClickItemListener
     ) : RecyclerView.ViewHolder(itemView) {
         private val tvTitl: AppCompatTextView = itemView.findViewById(R.id.movieTitle)
         private val image: AppCompatImageView = itemView.findViewById(R.id.movieImage)
         private val imgFavorite: AppCompatImageView = itemView.findViewById(R.id.ic_favorite)
 
         fun bind(movie: MoviesModel?) {
+            itemView.setOnClickListener {
+                list[adapterPosition]?.let { card -> listenerCard.ClickItemMovie((card)) }
+            }
             imgFavorite.setOnClickListener {
-                list[adapterPosition]?.let { it1 -> listener.ClickItemMovie(it1) }
+                list[adapterPosition]?.let { favorite -> listener.ClickItemMovie(favorite) }
             }
             if (movie?.original_title != null) {
                 tvTitl.text = movie.original_title

@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="movieflix_title">MovieFlix</string>
     <string name="hint_login_email">E-mail</string>
-    <string name="hint_login_senha">Senha</string>
+    <string name="hint_login_senha_primeira">Primeira Senha</string>
     <string name="btn_text_login">Entrar</string>
     <string name="tv_cadastrar_login">Ainda não é cadastrado??<br /> Clique aqui!</string>
     <string name="msg_senha_incorreta">Senha incorreta!</string>
@@ -36,4 +36,8 @@
     <string name="email_success_update_password">E-mail para redefinição de senha enviado com sucesso!</string>
     <string name="erro_update_password">Erro ao efetuar a atualização da senha!</string>
     <string name="tiltle_account_info">Informações da Conta</string>
+    <string name="hint_edt_name">Nome</string>
+    <string name="hint_repetir_senha">Repita a senha anterior</string>
+    <string name="alert_senha">As senhas devem ser iguas!</string>
+    <string name="hint_login_senha">Senha</string>
 </resources>
