@@ -6,21 +6,32 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.FrameLayout
+import android.widget.PopupMenu
+import android.widget.Toast
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.moviewflixnew.R
 import com.example.moviewflixnew.ui.MainActivity
+import com.example.moviewflixnew.ui.accountInfo.AccounInfoFragment
+import com.example.moviewflixnew.ui.favorites.FavoritesFragment
 import com.example.moviewflixnew.ui.search.SearchFragment
 import com.example.moviewflixnew.ui.listMovies.ListMoviesFragment
+import com.example.moviewflixnew.ui.utils.preferences.ManagmentPreferences
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_main.*
 
-class MainFragment : Fragment(), View.OnClickListener {
+class MainFragment : Fragment(){
 
     private lateinit var navController: NavController
     private var numPage:Int = 1
+    private lateinit var btnMenuInfo: AppCompatImageView
+    private lateinit var fragmentMain:FrameLayout
+    private lateinit var topBar: ConstraintLayout
+    private lateinit var setUserInfo: ManagmentPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +46,6 @@ class MainFragment : Fragment(), View.OnClickListener {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-
         (requireActivity() as MainActivity).mainComponent.inject(this)
     }
 
@@ -43,24 +53,26 @@ class MainFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         backPressed()
         fragments("list")
-        navController = Navigation.findNavController(view)
-        view.findViewById<ImageView>(R.id.back_pag).setOnClickListener(this)
-        view.findViewById<ImageView>(R.id.next_pag).setOnClickListener(this)
+        val activity = activity as Context
+        initView(view,activity)
+        initMenuInfo(view, activity)
+        eventBottomBar(view)
+    }
+
+    private fun eventBottomBar(view:View) {
         val bottomBar = view.findViewById<BottomNavigationView>(R.id.bottom_bar)
         bottomBar.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.logout -> {
-                    logout()
-                    return@setOnNavigationItemSelectedListener true
-                }
                 R.id.list -> {
                     fragments("list")
-                    setVisibilityBtnPag(true)
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.search -> {
                     fragments("search")
-                    setVisibilityBtnPag(false)
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.favorite -> {
+                    fragments("favoritos")
                     return@setOnNavigationItemSelectedListener true
                 }
                 else -> {
@@ -68,7 +80,51 @@ class MainFragment : Fragment(), View.OnClickListener {
                 }
             }
         }
+    }
 
+    private fun initView(view: View, context: Context) {
+        navController = Navigation.findNavController(view)
+        fragmentMain = view.findViewById(R.id.flFragment)
+        topBar = view.findViewById(R.id.topBar)
+        setUserInfo = ManagmentPreferences(context)
+    }
+
+    private fun initMenuInfo(view: View,context: Context) {
+        btnMenuInfo = view.findViewById(R.id.btn_menu_info)
+        val popupAdmin = PopupMenu(context ,btnMenuInfo)
+        popupAdmin.inflate(R.menu.menu_info)
+        popupAdmin.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.item_logout -> {
+                    logout()
+                    return@setOnMenuItemClickListener true
+                }
+                R.id.item_account -> {
+                    parentFragmentManager.beginTransaction().apply {
+                        replace(R.id.flFragment, AccounInfoFragment.newInstance())
+                        commit()
+                    }
+                    return@setOnMenuItemClickListener  true
+                }
+                else -> {
+                    return@setOnMenuItemClickListener true
+                }
+            }
+        }
+        btnMenuInfo.setOnClickListener {
+            try {
+                val popup = PopupMenu::class.java.getDeclaredField("mPopup")
+                popup.isAccessible = true
+                val menuAdmin = popup.get(popupAdmin)
+                menuAdmin.javaClass
+                    .getDeclaredMethod("setShowIcon",Boolean::class.java)
+                    .invoke(menuAdmin,true)
+            }catch (e:Exception){
+                e.printStackTrace()
+            }finally {
+                popupAdmin.show()
+            }
+        }
     }
 
     private fun backMain() {
@@ -77,9 +133,9 @@ class MainFragment : Fragment(), View.OnClickListener {
 
     private fun logout(){
         FirebaseAuth.getInstance().signOut()
+        setUserInfo.finishSession()
         backMain()
     }
-
 
     private fun fragments(nameFragment: String) {
         when (nameFragment) {
@@ -98,32 +154,19 @@ class MainFragment : Fragment(), View.OnClickListener {
                     commit()
                 }
             }
-        }
-    }
 
-    override fun onClick(v: View?) {
-        when(v!!.id){
-            R.id.next_pag -> {
-                    numPage += 1
-                    fragments("list")
-            }
-            R.id.back_pag -> {
-                if (numPage > 1){
-                    numPage -= 1
-                    fragments("list")
+            "favoritos" -> {
+                parentFragmentManager.beginTransaction().apply {
+                    replace(R.id.flFragment, FavoritesFragment.newInstance())
+                    addToBackStack(null)
+                    commit()
                 }
             }
         }
     }
 
-    private fun setVisibilityBtnPag(visible:Boolean){
-        if (visible){
-            back_pag.visibility = View.VISIBLE
-            next_pag.visibility = View.VISIBLE
-        }else{
-            back_pag.visibility = View.GONE
-            next_pag.visibility = View.GONE
-        }
 
+    companion object{
+        fun newInstance() = MainFragment()
     }
 }

@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         mainComponent = (applicationContext as MyApp).component.mainComponent().create()
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
@@ -22,6 +21,4 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
 
     }
-
-
 }

@@ -63,6 +63,9 @@
         <action
             android:id="@+id/action_mainFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_accounInfoFragment"
+            app:destination="@id/accounInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/cadastrarFragment"
@@ -72,5 +75,14 @@
         <action
             android:id="@+id/action_cadastrarFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accounInfoFragment"
+        android:name="com.example.moviewflixnew.ui.accountInfo.AccounInfoFragment"
+        android:label="fragment_accoun_info"
+        tools:layout="@layout/fragment_accoun_info" >
+        <action
+            android:id="@+id/action_accounInfoFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

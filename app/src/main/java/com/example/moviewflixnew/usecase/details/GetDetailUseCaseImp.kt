@@ -7,9 +7,10 @@ import javax.inject.Inject
 class GetDetailUseCaseImp @Inject constructor(
     private val movieFlixRepository: MovieFlixRepositoryImp
 ): GetDetailUseCase {
-    override fun getDetail(
+
+    override suspend fun getDetail(
         id:String?,
-        callbackSuccess:(success: DetailResponse) -> Unit,
-        callbackError: (error: String) -> Unit
+        callbackSuccess:(success: DetailResponse?) -> Unit,
+        callbackError: (error: String?) -> Unit
     ) = movieFlixRepository.requestMovieDetails(id,callbackSuccess,callbackError)
 }

@@ -7,6 +7,16 @@
     android:background="@drawable/bg_gradiente_cadastro"
     tools:context=".ui.listMovies.ListMoviesFragment">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/back_pag"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_baseline_arrow_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/dsc_back_btn" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_list_movies"
@@ -14,10 +24,32 @@
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/next_pag"
+        app:layout_constraintStart_toEndOf="@+id/back_pag"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/movie_item"/>
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/next_pag"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_baseline_arrow_forward_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/botao_proxima_pagina" />
+
+    <ProgressBar
+        android:id="@+id/cl_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

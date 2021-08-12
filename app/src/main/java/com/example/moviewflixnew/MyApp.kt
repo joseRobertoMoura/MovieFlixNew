@@ -3,6 +3,7 @@ package com.example.moviewflixnew
 import android.app.Application
 import com.example.moviewflixnew.di.AppComponent
 import com.example.moviewflixnew.di.DaggerAppComponent
+import com.google.firebase.FirebaseApp
 
 class MyApp:Application() {
 
@@ -10,14 +11,7 @@ class MyApp:Application() {
 
     override fun onCreate() {
         super.onCreate()
-
-//        startKoin {
-//            androidLogger(Level.NONE)
-//            androidContext(this@MyApp)
-//
-//            modules(mainModule)
-//        }
-
         component = DaggerAppComponent.factory().create(this)
+        FirebaseApp.initializeApp(this)
     }
 }

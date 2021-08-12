@@ -1,4 +1,4 @@
-package com.example.moviewflixnew.ui.dialog
+package com.example.moviewflixnew.ui.utils.dialog
 
 import android.os.Bundle
 import android.view.LayoutInflater
