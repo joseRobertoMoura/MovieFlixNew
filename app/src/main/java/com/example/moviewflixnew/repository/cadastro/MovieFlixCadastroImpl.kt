@@ -10,6 +10,7 @@ import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import com.google.firebase.database.FirebaseDatabase
 import javax.inject.Inject
 
 class MovieFlixCadastroImpl @Inject constructor() : MovieFlixCadastro {

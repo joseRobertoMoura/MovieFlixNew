@@ -120,22 +120,4 @@
             app:layout_constraintTop_toBottomOf="@+id/btn_entrar_login"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <FrameLayout
-        android:id="@+id/cl_progress_bar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:progressDrawable="@drawable/bg_progress_bar"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

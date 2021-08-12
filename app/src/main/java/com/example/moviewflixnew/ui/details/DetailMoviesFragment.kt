@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
@@ -14,7 +15,8 @@ import coil.load
 import com.example.moviewflixnew.R
 import com.example.moviewflixnew.ui.model.MoviesModel
 import com.example.moviewflixnew.ui.MainActivity
-import com.example.moviewflixnew.ui.dialog.DialogMessageError
+import com.example.moviewflixnew.ui.favorites.FavoritesViewModel
+import com.example.moviewflixnew.ui.utils.dialog.DialogMessageError
 import kotlinx.android.synthetic.main.fragment_detail_movies.*
 import javax.inject.Inject
 
@@ -22,8 +24,13 @@ class DetailMoviesFragment(private var movie:MoviesModel) : Fragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-
     private val detailViewModel by viewModels<DetailMovieViewModel> {viewModelFactory}
+
+    @Inject
+    lateinit var viewModelFactoryFavorites: ViewModelProvider.Factory
+    private val favoritesViewModel by viewModels<FavoritesViewModel> {viewModelFactoryFavorites}
+
+    private lateinit var favoriteBtn:AppCompatImageView
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -41,8 +48,23 @@ class DetailMoviesFragment(private var movie:MoviesModel) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val activity = activity as Context
+        initView(view)
+        initEventClick(activity)
         bindViews(activity)
     }
+
+    private fun initEventClick(context: Context) {
+        favoriteBtn.setOnClickListener {
+            favoritesViewModel.init(movie,context)
+            Toast.makeText(context,"O filme foi adcionado a sua lista de favoritos!", Toast.LENGTH_SHORT)
+                .show()
+        }
+    }
+
+    private fun initView(view: View) {
+        favoriteBtn = view.findViewById(R.id.add_favorites)
+    }
+
     companion object {
         fun newInstance(movie:MoviesModel) = DetailMoviesFragment(movie)
     }

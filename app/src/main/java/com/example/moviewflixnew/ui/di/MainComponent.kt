@@ -3,8 +3,10 @@ package com.example.moviewflixnew.ui.di
 import com.example.moviewflixnew.di.network.auth.AuthModule
 import com.example.moviewflixnew.ui.SplashScreen
 import com.example.moviewflixnew.ui.MainActivity
+import com.example.moviewflixnew.ui.accountInfo.AccounInfoFragment
 import com.example.moviewflixnew.ui.cadastrar.CadastrarFragment
 import com.example.moviewflixnew.ui.details.DetailMoviesFragment
+import com.example.moviewflixnew.ui.favorites.FavoritesFragment
 import com.example.moviewflixnew.ui.listMovies.ListMoviesFragment
 import com.example.moviewflixnew.ui.login.LoginFragment
 import com.example.moviewflixnew.ui.main.MainFragment
@@ -29,5 +31,7 @@ interface MainComponent {
     fun inject(fragment: MainFragment)
     fun inject(fragment: SearchFragment)
     fun inject(fragment: SplashScreen)
+    fun inject(fragment: AccounInfoFragment)
+    fun inject(fragment: FavoritesFragment)
 
 }

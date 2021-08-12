@@ -9,4 +9,5 @@ interface GetDetailUseCase {
       callbackSuccess:(success: DetailResponse?) -> Unit,
       callbackError: (error: String?) -> Unit
    )
+
 }

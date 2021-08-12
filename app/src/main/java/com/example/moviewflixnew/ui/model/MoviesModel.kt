@@ -14,4 +14,11 @@ data class MoviesModel(
     var poster_path: String?,
     @SerializedName("original_name")
     var original_name: String?
-):Parcelable
+):Parcelable{
+    constructor() : this(
+            "",
+    "",
+    "",
+    ""
+    )
+}

@@ -1,62 +1,34 @@
 {
   "project_info": {
     "project_number": "58431157374",
+    "firebase_url": "https://movieflix-4c578-default-rtdb.firebaseio.com",
     "project_id": "movieflix-4c578",
     "storage_bucket": "movieflix-4c578.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:58431157374:android:c1890be11e008839e8942f",
+        "mobilesdk_app_id": "1:58431157374:android:667509561dcadc84e8942f",
         "android_client_info": {
           "package_name": "com.example.moviewflixnew"
         }
       },
       "oauth_client": [
         {
-          "client_id": "744494093994-431b9sctv5tnfeu98ekf7i02f25o371e.apps.googleusercontent.com",
+          "client_id": "58431157374-f7cb8jobbamppnp9vild7hqpf226sgt0.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDDjDt-6ND7GXqFMyEgd7pvPq5EYf72JLg"
+          "current_key": "AIzaSyBae8uLY9shCFrNcwZQ1c6rdL9WgK7BMo0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "744494093994-431b9sctv5tnfeu98ekf7i02f25o371e.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:744494093994:android:9113a1fa827d2dac8762d3",
-        "android_client_info": {
-          "package_name": "com.jose.netflixclone"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "744494093994-431b9sctv5tnfeu98ekf7i02f25o371e.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDDjDt-6ND7GXqFMyEgd7pvPq5EYf72JLg"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "744494093994-431b9sctv5tnfeu98ekf7i02f25o371e.apps.googleusercontent.com",
+              "client_id": "58431157374-f7cb8jobbamppnp9vild7hqpf226sgt0.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

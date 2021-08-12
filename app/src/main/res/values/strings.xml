@@ -6,7 +6,7 @@
     <string name="hint_login_email">E-mail</string>
     <string name="hint_login_senha">Senha</string>
     <string name="btn_text_login">Entrar</string>
-    <string name="tv_cadastrar_login">Ainda não é cadastrado??<br/> Clique aqui!</string>
+    <string name="tv_cadastrar_login">Ainda não é cadastrado??<br /> Clique aqui!</string>
     <string name="msg_senha_incorreta">Senha incorreta!</string>
     <string name="msg_erro_login">Erro ao efeturar o login</string>
     <string name="msg_campos_vazios">Favor preencha todos os campos</string>
@@ -26,4 +26,14 @@
     <string name="txt_title_btn_dialog">Close</string>
     <string name="Message_error_api">Ops tivemos um problema, tente novamente mais tarde!</string>
     <string name="msg_internet_error">Tivemos um problema. Verifique sua conexão com a internet e tente Novamente em alguns instantes!</string>
+    <string name="title_menu_info_logout">Logout</string>
+    <string name="title_favoritos_bottom_bar">Favoritos</string>
+    <string name="title_pesqusiar_bottom_bar">Pesquisar</string>
+    <string name="title_lista_bottom_bar">Lista</string>
+    <string name="title_account_menu_info">Account</string>
+    <string name="title_email_account_info">E-mail:</string>
+    <string name="button_change_password">Alterar Senha ></string>
+    <string name="email_success_update_password">E-mail para redefinição de senha enviado com sucesso!</string>
+    <string name="erro_update_password">Erro ao efetuar a atualização da senha!</string>
+    <string name="tiltle_account_info">Informações da Conta</string>
 </resources>

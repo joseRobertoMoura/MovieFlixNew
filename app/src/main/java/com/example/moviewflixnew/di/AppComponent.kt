@@ -11,7 +11,8 @@ import dagger.Module
     ViewModelBuilderModule::class,
     UseCaseModule::class,
     SubComponentsModule::class,
-    ApiModule::class
+    ApiModule::class,
+    DialogModule::class
 ])
 interface AppComponent {
 
