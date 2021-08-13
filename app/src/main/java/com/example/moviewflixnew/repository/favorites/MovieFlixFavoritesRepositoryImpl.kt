@@ -22,7 +22,7 @@ class MovieFlixFavoritesRepositoryImpl @Inject constructor() : MovieFlixFavorite
         val setUserInfo = ManagmentPreferences(context)
         FirebaseDatabase.getInstance().getReference()
             .child("favorites")
-            .child(setUserInfo.getInfoUser().replace(".",""))
+            .child(setUserInfo.getInfoUserEmail().replace(".",""))
             .child(movie.id!!)
             .setValue(movie)
             .addOnCompleteListener {
@@ -43,7 +43,7 @@ class MovieFlixFavoritesRepositoryImpl @Inject constructor() : MovieFlixFavorite
     ) {
         val setUserInfo = ManagmentPreferences(context)
         FirebaseDatabase.getInstance().getReference("favorites")
-            .child(setUserInfo.getInfoUser().replace(".",""))
+            .child(setUserInfo.getInfoUserEmail().replace(".",""))
             .addValueEventListener(object:ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val children = snapshot!!.children
@@ -71,7 +71,7 @@ class MovieFlixFavoritesRepositoryImpl @Inject constructor() : MovieFlixFavorite
         val setUserInfo = ManagmentPreferences(context)
         FirebaseDatabase.getInstance().getReference()
             .child("favorites")
-            .child(setUserInfo.getInfoUser().replace(".",""))
+            .child(setUserInfo.getInfoUserEmail().replace(".",""))
             .child(movie.id!!)
             .removeValue()
             .addOnCompleteListener {

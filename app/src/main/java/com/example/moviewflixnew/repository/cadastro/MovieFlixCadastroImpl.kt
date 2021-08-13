@@ -6,12 +6,16 @@ import android.view.View
 import android.widget.Toast
 import com.example.moviewflixnew.R
 import com.example.moviewflixnew.data.model.cadastro.CadastroModel
+import com.example.moviewflixnew.ui.model.MoviesModel
 import com.example.moviewflixnew.ui.utils.preferences.ManagmentPreferences
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import javax.inject.Inject
 
 class MovieFlixCadastroImpl @Inject constructor() : MovieFlixCadastro {
@@ -23,7 +27,7 @@ class MovieFlixCadastroImpl @Inject constructor() : MovieFlixCadastro {
         context: Context
     ) {
         FirebaseAuth.getInstance()
-            .createUserWithEmailAndPassword(cadastroModel.email, cadastroModel.password)
+            .createUserWithEmailAndPassword(cadastroModel.email!!, cadastroModel.password!!)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     FirebaseDatabase.getInstance().getReference()
@@ -57,4 +61,5 @@ class MovieFlixCadastroImpl @Inject constructor() : MovieFlixCadastro {
                 }
             }
     }
+
 }

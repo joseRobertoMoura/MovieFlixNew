@@ -26,8 +26,9 @@ class AccounInfoFragment : Fragment() {
     private lateinit var btnBackFragment: AppCompatImageView
     private lateinit var navController: NavController
     private lateinit var setUserInfo: ManagmentPreferences
-    private lateinit var userEmail: AppCompatTextView
     private lateinit var changePassword: AppCompatTextView
+    private lateinit var emailUser: AppCompatTextView
+    private lateinit var nameUser: AppCompatTextView
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -54,7 +55,7 @@ class AccounInfoFragment : Fragment() {
     }
 
     private fun initViewModel(context: Context) {
-        updateViewModel.init(UpdateUserModel(setUserInfo.getInfoUser()), context)
+        updateViewModel.init(UpdateUserModel(setUserInfo.getInfoUserEmail()), context)
         updateViewModel.updateUserActionView.observe(viewLifecycleOwner){ state ->
             when(state){
                 is UpdateUserActionView.UpdateSuccess -> {
@@ -85,10 +86,11 @@ class AccounInfoFragment : Fragment() {
     private fun initView(view: View, context: Context) {
         btnBackFragment = view.findViewById(R.id.btn_back_account_info)
         setUserInfo = ManagmentPreferences(context)
-        userEmail = view.findViewById(R.id.email_account_info)
-        userEmail.text = setUserInfo.getInfoUser()
         changePassword = view.findViewById(R.id.change_password)
-
+        emailUser = view.findViewById(R.id.email_user_ai)
+        emailUser.text = setUserInfo.getInfoUserEmail()
+        nameUser = view.findViewById(R.id.name_user_ai)
+        nameUser.text = setUserInfo.getInfoUserName()
     }
 
     companion object {

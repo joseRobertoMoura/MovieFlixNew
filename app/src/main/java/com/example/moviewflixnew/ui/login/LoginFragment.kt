@@ -35,9 +35,10 @@ class LoginFragment : Fragment() {
     private lateinit var navController: NavController
     private lateinit var tv_alerta_login:AppCompatTextView
     private lateinit var btnEntrar: AppCompatButton
-    private lateinit var btnCadastrar: AppCompatTextView
+    private lateinit var btnCadastrar: AppCompatButton
     private lateinit var email: AppCompatEditText
     private lateinit var senha: AppCompatEditText
+    private lateinit var forgetPassword: AppCompatTextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -95,12 +96,31 @@ class LoginFragment : Fragment() {
         loginViewModel.loginActionView.observe(viewLifecycleOwner, { state ->
             when(state){
                 is LoginActionView.LoginSuccess -> {
-                    navController.navigate(R.id.action_loginFragment_to_mainFragment)
-                    setUserInfo.initializeSession(email)
+                    iniInfoViewModel(email,context)
                 }
 
                 is LoginActionView.LoginError -> {
                     Toast.makeText(context,state.error,Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
+    }
+
+    private fun iniInfoViewModel(email: String, context: Context) {
+        loginViewModel.initInfo(email,context)
+        loginViewModel.loginInfoActionView.observe(viewLifecycleOwner, { state ->
+            when(state){
+                is LoginInfoActionView.LoginInfoSuccess -> {
+                    if (state.success?.email != null && state.success.name != null){
+                        navController.navigate(R.id.action_loginFragment_to_mainFragment)
+                        setUserInfo.initializeSession(state.success.email, state.success.name)
+                    }else{
+                        navController.navigate(R.id.action_loginFragment_to_mainFragment)
+                    }
+                }
+
+                is LoginInfoActionView.LoginInfoError -> {
+
                 }
             }
         })
@@ -113,6 +133,7 @@ class LoginFragment : Fragment() {
         email = view.findViewById(R.id.edt_email_login)
         senha = view.findViewById(R.id.edt_senha_login)
         setUserInfo = ManagmentPreferences(context)
+        forgetPassword = view.findViewById(R.id.forget_password)
     }
 
     companion object {

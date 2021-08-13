@@ -30,6 +30,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_back" />
 
+    <TextView
+        android:id="@+id/title_email_cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_email"
+        android:textColor="@color/dark_blue"
+        app:layout_constraintBottom_toTopOf="@+id/edt_email_cadastrar"
+        app:layout_constraintStart_toStartOf="@+id/edt_email_cadastrar"/>
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edt_email_cadastrar"
         android:layout_width="match_parent"
@@ -59,12 +68,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_name_cadastro"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/dark_blue"
+        app:layout_constraintTop_toBottomOf="@+id/view_email"
+        app:layout_constraintStart_toStartOf="@+id/name_cadastro"/>
+
     <EditText
         android:id="@+id/name_cadastro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:autofillHints="Seu nome"
         android:background="@android:color/transparent"
@@ -75,7 +93,7 @@
         android:textColorHint="@color/dark_blue"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_email"/>
+        app:layout_constraintTop_toBottomOf="@+id/title_name"/>
 
     <View
         android:id="@+id/view_nome"
@@ -88,13 +106,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/title_senha"
+        android:textColor="@color/dark_blue"
+        app:layout_constraintTop_toBottomOf="@+id/view_nome"
+        app:layout_constraintBottom_toTopOf="@+id/txtinput_password_cadastro_first"
+        app:layout_constraintStart_toStartOf="@+id/txtinput_password_cadastro_first"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtinput_password_cadastro_first"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         app:hintEnabled="false"
         android:textColor="@color/dark_blue"
         android:textColorHint="@color/dark_blue"
@@ -103,14 +131,12 @@
         app:passwordToggleTint="@color/dark_blue"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_nome">
+        app:layout_constraintTop_toBottomOf="@+id/title_password">
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edt_senha_cadastrar_first"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
             android:autofillHints="Senha Cadastro"
             android:background="@android:color/transparent"
             android:hint="@string/hint_login_senha_primeira"
@@ -132,13 +158,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_senha_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_senha_second"
+        android:textColor="@color/dark_blue"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/view_senha_first"
+        app:layout_constraintStart_toStartOf="@+id/txtinput_password_cadastro_second" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtinput_password_cadastro_second"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         app:hintEnabled="false"
         android:textColor="@color/dark_blue"
         android:textColorHint="@color/dark_blue"
@@ -147,17 +182,15 @@
         app:passwordToggleTint="@color/dark_blue"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_senha_first">
+        app:layout_constraintTop_toBottomOf="@+id/title_senha_second">
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edt_senha_cadastrar_second"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
             android:autofillHints="Senha Cadastro"
             android:background="@android:color/transparent"
-            android:hint="@string/hint_repetir_senha"
+            android:hint="@string/hint_login_senha_primeira"
             android:textColor="@color/dark_blue"
             android:inputType="textPassword"
             android:padding="15dp"
