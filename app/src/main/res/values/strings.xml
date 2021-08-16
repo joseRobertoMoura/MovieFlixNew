@@ -23,7 +23,7 @@
     <string name="dsc_back_btn">voltar pagina</string>
     <string name="botao_proxima_pagina">botao proxima pagina</string>
     <string name="txt_title_dialog">Error:</string>
-    <string name="txt_title_btn_dialog">Close</string>
+    <string name="txt_title_btn_dialog">Enviar</string>
     <string name="Message_error_api">Ops tivemos um problema, tente novamente mais tarde!</string>
     <string name="msg_internet_error">Tivemos um problema. Verifique sua conexão com a internet e tente Novamente em alguns instantes!</string>
     <string name="title_menu_info_logout">Sair</string>
@@ -42,9 +42,14 @@
     <string name="hint_login_senha">Senha</string>
     <string name="title_email_ai">Email:</string>
     <string name="title_name_ai">Nome:</string>
-    <string name="text_forget_password">Esqueci minha senha ></string>
+    <string name="text_forget_password">Esqueci a senha></string>
     <string name="title_email">Email:</string>
     <string name="title_name_cadastro">Nome:</string>
     <string name="title_senha">Senha:</string>
     <string name="title_senha_second">Confirme sua senha:</string>
+    <string name="title_dialog_password_refactor">Refatorar senha</string>
+    <string name="text_hint_email_passowrd_refactor">Seu e-mail</string>
+    <string name="title_edt_email_password_refactor">Digite o seu e-mail cadastrado no aplicativo:</string>
+    <string name="txt_btn_email_cancel">Cancelar</string>
+    <string name="txt_email_alert_empity">Digite um e-mail válido</string>
 </resources>

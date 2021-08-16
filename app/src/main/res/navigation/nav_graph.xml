@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_loginFragment_to_cadastrarFragment"
             app:destination="@id/cadastrarFragment" />
+        <action
+            android:id="@+id/action_loginFragment_self"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/listMoviesFragment"

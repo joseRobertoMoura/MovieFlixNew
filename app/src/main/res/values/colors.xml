@@ -7,6 +7,7 @@
     <color name="dark_yellow">#FBC02D</color>
     <color name="ligh_yellow">#F8D170</color>
     <color name="black">#FF000000</color>
+    <color name="black_light">#7E000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#D32F2F</color>
     <color name="grey">#706E6E</color>

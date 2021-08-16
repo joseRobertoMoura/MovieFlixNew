@@ -11,6 +11,7 @@ import com.example.moviewflixnew.ui.listMovies.ListMoviesFragment
 import com.example.moviewflixnew.ui.login.LoginFragment
 import com.example.moviewflixnew.ui.main.MainFragment
 import com.example.moviewflixnew.ui.search.SearchFragment
+import com.example.moviewflixnew.ui.utils.dialog.DialogPasswordRefactor
 import dagger.Subcomponent
 import javax.inject.Singleton
 
@@ -33,5 +34,6 @@ interface MainComponent {
     fun inject(fragment: SplashScreen)
     fun inject(fragment: AccounInfoFragment)
     fun inject(fragment: FavoritesFragment)
+    fun inject(fragment: DialogPasswordRefactor)
 
 }
