@@ -9,15 +9,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.moviewflixnew.R
+import com.example.moviewflixnew.utils.ColorBars
 
 class SplashScreen : Fragment() {
 
-    lateinit var navController: NavController
-    lateinit var window:Window
+    private lateinit var navController: NavController
+    private lateinit var window:Window
+    private val colorBars = ColorBars()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -34,15 +35,11 @@ class SplashScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         backPressed()
-        val activity = activity as Context
-        window = requireActivity().window
-        window.statusBarColor= ContextCompat.getColor(activity,R.color.light_blue)
-        window.navigationBarColor = ContextCompat.getColor(activity,R.color.ligh_yellow)
+        colorBars.changeColorPrimary(requireActivity())
         navController = Navigation.findNavController(view)
         Handler(Looper.getMainLooper()).postDelayed({
             navController!!.navigate(R.id.action_splashScreen_to_loginFragment)
-            window.statusBarColor= ContextCompat.getColor(activity,R.color.dark_blue)
-            window.navigationBarColor = ContextCompat.getColor(activity,R.color.dark_blue)
+            colorBars.changeColorPrimary(requireActivity())
         },2000)
     }
 

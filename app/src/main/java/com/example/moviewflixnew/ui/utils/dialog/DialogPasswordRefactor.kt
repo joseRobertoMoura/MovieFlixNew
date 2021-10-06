@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
@@ -26,6 +27,7 @@ class DialogPasswordRefactor: DialogFragment(){
     private lateinit var btnSendEmail: AppCompatButton
     private lateinit var btnCancel: AppCompatButton
     private lateinit var txtAlert: AppCompatTextView
+    private lateinit var frameSendCancel: LinearLayout
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -87,8 +89,9 @@ class DialogPasswordRefactor: DialogFragment(){
 
     private fun initView(view: View) {
         emailUser = view.findViewById(R.id.edt_email_passowrd_refactor)
-        btnCancel = view.findViewById(R.id.btn_cancel)
-        btnSendEmail = view.findViewById(R.id.btn_send_email)
+        frameSendCancel = view.findViewById(R.id.frame_send_cancel)
+        btnCancel = frameSendCancel.findViewById(R.id.btn_cancel)
+        btnSendEmail = frameSendCancel.findViewById(R.id.btn_send_email)
         txtAlert = view.findViewById(R.id.text_alert)
     }
 

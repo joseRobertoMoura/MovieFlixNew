@@ -1,0 +1,2 @@
+com/loginmodule/BuildConfig.java
+ com.loginmodule.BuildConfig

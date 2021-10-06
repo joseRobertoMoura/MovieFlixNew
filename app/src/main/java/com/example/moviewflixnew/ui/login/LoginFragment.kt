@@ -1,7 +1,6 @@
 package com.example.moviewflixnew.ui.login
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -21,13 +20,10 @@ import androidx.navigation.Navigation
 import com.example.moviewflixnew.R
 import com.example.moviewflixnew.data.model.login.LoginFireBaseModel
 import com.example.moviewflixnew.ui.MainActivity
-import com.example.moviewflixnew.ui.details.DetailMovieViewModel
-import com.example.moviewflixnew.ui.utils.dialog.DialogMessageErrorClass
 import com.example.moviewflixnew.ui.utils.dialog.DialogPasswordRefactor
 import com.example.moviewflixnew.ui.utils.preferences.ManagmentPreferences
-import com.google.firebase.FirebaseApp
+import com.example.moviewflixnew.utils.ColorBars
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import javax.inject.Inject
 
 class LoginFragment : Fragment() {
@@ -45,6 +41,8 @@ class LoginFragment : Fragment() {
     private lateinit var senha: AppCompatEditText
     private lateinit var forgetPassword: AppCompatTextView
     private lateinit var progressBar: ConstraintLayout
+    private val colorBars = ColorBars()
+    private lateinit var frameBtnLogin: ConstraintLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,15 +60,15 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        val activity = activity as Context
         backPressed()
-        initView(view,activity)
-        verificaUsuarioLogado(activity)
-        eventClick(activity)
+        initView(view,requireContext())
+        verificaUsuarioLogado(requireContext())
+        eventClick(requireContext())
     }
 
     private fun backPressed() {
         requireActivity().onBackPressed()
+        colorBars.changeColorPrimary(requireActivity())
     }
 
     private fun eventClick(context: Context) {
@@ -141,6 +139,7 @@ class LoginFragment : Fragment() {
                         navController.navigate(R.id.action_loginFragment_to_mainFragment)
                         setUserInfo.initializeSession(state.success.email, state.success.name)
                         progressBar.visibility = View.GONE
+                        colorBars.changeColorSecondary(requireActivity())
                     }
                 }
 
@@ -154,8 +153,9 @@ class LoginFragment : Fragment() {
     }
 
     private fun initView(view:View, context: Context) {
-        btnEntrar = view.findViewById(R.id.btn_entrar_login)
-        btnCadastrar = view.findViewById(R.id.btn_cadastrar_login)
+        frameBtnLogin = view.findViewById(R.id.frame_login)
+        btnEntrar = frameBtnLogin.findViewById(R.id.btn_login)
+        btnCadastrar = frameBtnLogin.findViewById(R.id.btn_cadastrar)
         tv_alerta_login = view.findViewById(R.id.tv_alerta_login)
         email = view.findViewById(R.id.edt_email_login)
         senha = view.findViewById(R.id.edt_senha_login)

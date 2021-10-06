@@ -1,0 +1,2 @@
+com/movieFlix/commons/BuildConfig.java
+ com.movieFlix.commons.BuildConfig

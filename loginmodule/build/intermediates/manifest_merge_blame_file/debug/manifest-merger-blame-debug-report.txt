@@ -1,0 +1,33 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.loginmodule"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->/home/jose/AndroidStudioProjects/MovieFlixNew/loginmodule/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->/home/jose/AndroidStudioProjects/MovieFlixNew/loginmodule/src/main/AndroidManifest.xml
+10
+11    <application
+11-->/home/jose/AndroidStudioProjects/MovieFlixNew/loginmodule/src/main/AndroidManifest.xml:5:5-11:50
+12        android:allowBackup="true"
+12-->/home/jose/AndroidStudioProjects/MovieFlixNew/loginmodule/src/main/AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.6.0] /home/jose/.gradle/caches/transforms-2/files-2.1/524f811f6cb45b5eaed323c908a1267f/core-1.6.0/AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:extractNativeLibs="false"
+16        android:icon="@mipmap/ic_launcher"
+16-->/home/jose/AndroidStudioProjects/MovieFlixNew/loginmodule/src/main/AndroidManifest.xml:7:9-43
+17        android:label="@string/app_name"
+17-->/home/jose/AndroidStudioProjects/MovieFlixNew/loginmodule/src/main/AndroidManifest.xml:8:9-41
+18        android:roundIcon="@mipmap/ic_launcher_round"
+18-->/home/jose/AndroidStudioProjects/MovieFlixNew/loginmodule/src/main/AndroidManifest.xml:9:9-54
+19        android:supportsRtl="true"
+19-->/home/jose/AndroidStudioProjects/MovieFlixNew/loginmodule/src/main/AndroidManifest.xml:10:9-35
+20        android:testOnly="true"
+21        android:theme="@style/Theme.MovieFlix" />
+21-->/home/jose/AndroidStudioProjects/MovieFlixNew/loginmodule/src/main/AndroidManifest.xml:11:9-47
+22
+23</manifest>

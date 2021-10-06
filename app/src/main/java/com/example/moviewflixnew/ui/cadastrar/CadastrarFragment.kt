@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -28,12 +28,13 @@ class CadastrarFragment : Fragment() {
 
     private lateinit var navController: NavController
     private lateinit var tvAlertaCadastro:AppCompatTextView
-    private lateinit var btnBack: AppCompatImageView
     private lateinit var btnCadastrar: AppCompatButton
+    private lateinit var btnLogin: AppCompatButton
     private lateinit var email: AppCompatEditText
     private lateinit var senha: AppCompatEditText
     private lateinit var senhaRepeat: AppCompatEditText
     private lateinit var nameUser: AppCompatEditText
+    private lateinit var frameBtn: ConstraintLayout
 
 
     override fun onCreateView(
@@ -75,9 +76,10 @@ class CadastrarFragment : Fragment() {
             }
         }
 
-        btnBack.setOnClickListener {
-            backMain()
+        btnLogin.setOnClickListener {
+            navController.navigate(R.id.action_cadastrarFragment_to_loginFragment)
         }
+
     }
 
     private fun verifyPassword(senha: String, senhaRepeat: String): Boolean {
@@ -86,8 +88,9 @@ class CadastrarFragment : Fragment() {
 
     private fun initView(view: View) {
         tvAlertaCadastro = view.findViewById(R.id.tv_alerta_cadastrar)
-        btnBack = view.findViewById(R.id.img_back)
-        btnCadastrar = view.findViewById(R.id.btn_entrar_cadastrar)
+        frameBtn = view.findViewById(R.id.frame_cadastro)
+        btnCadastrar = frameBtn.findViewById(R.id.btn_cadastrar)
+        btnLogin = frameBtn.findViewById(R.id.btn_login)
         email = view.findViewById(R.id.edt_email_cadastrar)
         senha = view.findViewById(R.id.edt_senha_cadastrar_first)
         senhaRepeat = view.findViewById(R.id.edt_senha_cadastrar_second)

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
@@ -119,6 +120,7 @@ class ListMoviesFragment(
             override fun ClickItemMovie(movie: MoviesModel) {
                 parentFragmentManager.beginTransaction().apply {
                     replace(R.id.flFragment, DetailMoviesFragment.newInstance(movie))
+                    setCustomAnimations(R.anim.animation_exit, R.anim.animation_exit)
                     addToBackStack(null)
                     commit()
                 }

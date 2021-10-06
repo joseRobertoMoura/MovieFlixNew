@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:gravity="right"
+    android:background="@android:color/transparent"
+android:orientation="horizontal">
+
+<androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/btn_cancel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:layout_marginEnd="10dp"
+    android:backgroundTint="@color/red"
+    android:textColor="@color/white"
+    android:fontFamily="@font/quicksand"
+    android:textSize="16sp"
+    android:textAllCaps="false"
+    android:text="@string/txt_btn_email_cancel"/>
+
+<androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/btn_send_email"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:textColor="@color/white"
+    android:fontFamily="@font/quicksand"
+    android:backgroundTint="@color/dark_blue"
+    android:textSize="16sp"
+    android:textAllCaps="false"
+    android:text="@string/txt_title_btn_dialog"/>
+
+</LinearLayout>

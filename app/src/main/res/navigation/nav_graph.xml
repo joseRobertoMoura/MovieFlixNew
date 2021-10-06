@@ -12,10 +12,12 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/animation_exit" />
         <action
             android:id="@+id/action_loginFragment_to_cadastrarFragment"
-            app:destination="@id/cadastrarFragment" />
+            app:destination="@id/cadastrarFragment"
+            app:enterAnim="@anim/animation_enter" />
         <action
             android:id="@+id/action_loginFragment_self"
             app:destination="@id/loginFragment" />
@@ -27,7 +29,8 @@
         tools:layout="@layout/fragment_list_movies" >
         <action
             android:id="@+id/action_listMoviesFragment_to_detailMoviesFragment"
-            app:destination="@id/detailMoviesFragment" />
+            app:destination="@id/detailMoviesFragment"
+            app:enterAnim="@anim/animation_exit" />
     </fragment>
     <fragment
         android:id="@+id/detailMoviesFragment"
@@ -41,7 +44,8 @@
         tools:layout="@layout/fragment_splash_screen" >
         <action
             android:id="@+id/action_splashScreen_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/animation_exit" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -62,13 +66,17 @@
             app:destination="@id/listMoviesFragment" />
         <action
             android:id="@+id/action_mainFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/rotation_enter_y" />
         <action
             android:id="@+id/action_mainFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/animation_enter" />
         <action
             android:id="@+id/action_mainFragment_to_accounInfoFragment"
-            app:destination="@id/accounInfoFragment" />
+            app:destination="@id/accounInfoFragment"
+            app:enterAnim="@anim/rotation_enter_y"
+            app:popEnterAnim="@anim/rotation_enter_y" />
     </fragment>
     <fragment
         android:id="@+id/cadastrarFragment"
@@ -77,7 +85,8 @@
         tools:layout="@layout/fragment_cadastrar" >
         <action
             android:id="@+id/action_cadastrarFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/animation_exit" />
     </fragment>
     <fragment
         android:id="@+id/accounInfoFragment"

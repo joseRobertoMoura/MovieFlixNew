@@ -3,8 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="movieflix_title">MovieFlix</string>
-    <string name="hint_login_email">E-mail</string>
-    <string name="hint_login_senha_primeira">Password</string>
+    <string name="hint_login_email">Digite seu e-mail</string>
+    <string name="hint_login_senha_primeira">Digite sua senha</string>
     <string name="btn_text_login">Login</string>
     <string name="tv_cadastrar_login">Cadastrar</string>
     <string name="msg_senha_incorreta">Senha incorreta!</string>
@@ -36,7 +36,7 @@
     <string name="email_success_update_password">E-mail para redefinição de senha enviado com sucesso!</string>
     <string name="erro_update_password">Erro ao efetuar a atualização da senha!</string>
     <string name="tiltle_account_info">Perfil</string>
-    <string name="hint_edt_name">Nome</string>
+    <string name="hint_edt_name">Digite seu nome</string>
     <string name="hint_repetir_senha">Repita a senha anterior</string>
     <string name="alert_senha">As senhas devem ser iguas!</string>
     <string name="hint_login_senha">Senha</string>
@@ -52,4 +52,7 @@
     <string name="title_edt_email_password_refactor">Digite o seu e-mail cadastrado no aplicativo:</string>
     <string name="txt_btn_email_cancel">Cancelar</string>
     <string name="txt_email_alert_empity">Digite um e-mail válido</string>
+    <string name="hint_confirm_password_cadastro">Digite novamente sua senha</string>
+    <string name="title_bar_main">Movie Flix</string>
+    <string name="subtitle_login">Login</string>
 </resources>
