@@ -27,16 +27,11 @@
             android:id="@+id/movieTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            style="@style/textMovieTitle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/movieImage"
-            tools:text="Exemplo filme"
-            android:textStyle="bold"
-            android:textColor="@color/red"
-            android:textSize="18sp"
-            android:padding="8dp"
-            android:background="@color/dark_blue"/>
+            app:layout_constraintTop_toBottomOf="@+id/movieImage"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

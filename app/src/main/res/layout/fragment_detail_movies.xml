@@ -45,6 +45,7 @@
             android:textColor="@color/dark_blue"
             android:textSize="30sp"
             android:textStyle="bold"
+            android:fontFamily="@font/quicksand"
             app:layout_constraintBottom_toBottomOf="@+id/tv_title"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/movieImage_detail" />
@@ -57,6 +58,7 @@
             android:layout_marginBottom="15dp"
             android:textSize="20sp"
             android:textColor="@color/dark_blue"
+            android:fontFamily="@font/quicksand"
             app:layout_constraintBottom_toTopOf="@+id/tv_name_overview"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_name_title" />
@@ -70,6 +72,7 @@
             android:textColor="@color/dark_blue"
             android:textSize="30sp"
             android:textStyle="bold"
+            android:fontFamily="@font/quicksand"
             app:layout_constraintBottom_toTopOf="@+id/sv_oververview"
             app:layout_constraintLeft_toLeftOf="@id/sv_oververview"
             app:layout_constraintTop_toBottomOf="@+id/tv_name_title" />
@@ -89,6 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
+                android:fontFamily="@font/quicksand"
                 android:textColor="@color/dark_blue"/>
 
         </ScrollView>

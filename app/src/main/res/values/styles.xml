@@ -75,4 +75,13 @@
         <item name="android:layout_marginEnd">20dp</item>
         <item name="android:elevation">5dp</item>
     </style>
+<!--    movie_item-->
+    <style name="textMovieTitle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/dark_blue</item>
+        <item name="android:fontFamily">@font/quicksand</item>
+        <item name="android:padding">8dp</item>
+    </style>
 </resources>
