@@ -1,5 +1,6 @@
 package com.example.moviewflixnew.repository
 
+import com.example.moviewflixnew.BuildConfig
 import com.example.moviewflixnew.data.model.detail.DetailResponse
 import com.example.moviewflixnew.data.model.MoviesTendencyResponse
 import com.example.moviewflixnew.di.network.auth.AuthApi
@@ -17,7 +18,7 @@ class MovieFlixRepositoryImp @Inject constructor(
         callbackSuccess:(success:MoviesTendencyResponse?) -> Unit,
         callbackError: (error:MoviesTendencyResponse?) -> Unit
     ){
-        val request = movieFlixApiTask.getListTndency("579dbbdd2de6dd3cc42c4d65dc3afdae", numPage)
+        val request = movieFlixApiTask.getListTndency(BuildConfig.API_KEY, numPage)
         request.enqueue(object: Callback<MoviesTendencyResponse>{
             override fun onResponse(
                 call: Call<MoviesTendencyResponse>,

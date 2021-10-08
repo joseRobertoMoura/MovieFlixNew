@@ -3,6 +3,6 @@ package com.example.moviewflixnew.utils
 class MovieFlixConstantes {
 
     companion object{
-        const val BASE_URL = "https://api.themoviedb.org/3/"
+        const val URL_MAIN = "https://api.themoviedb.org/3/"
     }
 }

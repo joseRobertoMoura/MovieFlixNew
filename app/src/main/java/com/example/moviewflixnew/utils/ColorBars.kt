@@ -18,4 +18,10 @@ class ColorBars {
         window.statusBarColor= ContextCompat.getColor(activity, R.color.dark_blue)
         window.navigationBarColor = ContextCompat.getColor(activity, R.color.dark_blue)
     }
+
+    fun changeColorFragmentResponse(activity: Activity){
+        val window : Window = activity.window
+        window.statusBarColor= ContextCompat.getColor(activity, R.color.grey)
+        window.navigationBarColor = ContextCompat.getColor(activity, R.color.grey)
+    }
 }

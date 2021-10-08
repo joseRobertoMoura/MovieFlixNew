@@ -1,18 +1,22 @@
 package com.example.moviewflixnew.di
 
-import com.example.moviewflixnew.utils.MovieFlixConstantes
+import com.example.moviewflixnew.BuildConfig
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Singleton
 
 @Module
 class ApiModule {
 
+    companion object{
+        const val URL = BuildConfig.BASE_URL
+    }
+
+
     @Provides
     fun provideApi() = Retrofit.Builder()
-        .baseUrl(MovieFlixConstantes.BASE_URL)
+        .baseUrl(URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 

@@ -18,6 +18,7 @@ import androidx.navigation.Navigation
 import com.example.moviewflixnew.R
 import com.example.moviewflixnew.data.model.cadastro.CadastroModel
 import com.example.moviewflixnew.ui.MainActivity
+import com.example.moviewflixnew.utils.ColorBars
 import javax.inject.Inject
 
 class CadastrarFragment : Fragment() {
@@ -25,7 +26,7 @@ class CadastrarFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private val cadastroViewModel by viewModels<CadastroViewModel> {viewModelFactory}
-
+    private val colorBars = ColorBars()
     private lateinit var navController: NavController
     private lateinit var tvAlertaCadastro:AppCompatTextView
     private lateinit var btnCadastrar: AppCompatButton
@@ -100,17 +101,24 @@ class CadastrarFragment : Fragment() {
         cadastroViewModel.cadastroActionView.observe(viewLifecycleOwner){ state ->
             when(state){
                 is CadastroActionView.CadastroSuccess -> {
-                    backMain()
+                    changeFragmentResponse(getString(R.string.msg_cadastro_sucesso),R.drawable.ic_ok,true)
                 }
                 is CadastroActionView.CadastroError -> {
-                    tvAlertaCadastro.visibility = View.VISIBLE
-                    tvAlertaCadastro.text = state.error
+                    changeFragmentResponse(
+                        getString(R.string.msg_cadastro_falha),
+                        R.drawable.ic_icons8_delete,
+                    false)
                 }
             }
         }
     }
 
-    private fun backMain(){
-        navController.navigate(R.id.action_cadastrarFragment_to_loginFragment)
+    private fun changeFragmentResponse(message:String,id:Int, response: Boolean){
+        val bundle = Bundle()
+        bundle.putString(Consts.MESSAGE.toString(),message)
+        bundle.putInt(Consts.ID.toString(), id)
+        bundle.putBoolean(Consts.RESPONSE.toString(),response)
+        navController.navigate(R.id.action_cadastrarFragment_to_cadastroResponseFragment,bundle)
+        colorBars.changeColorFragmentResponse(requireActivity())
     }
 }

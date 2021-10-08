@@ -56,4 +56,6 @@
     <string name="title_bar_main">Movie Flix</string>
     <string name="subtitle_login">Login</string>
     <string name="text_btn_voltar_cadastro">Voltar</string>
+    <string name="msg_cadastro_sucesso">Cadastro Realizado com sucesso!</string>
+    <string name="msg_cadastro_falha">Ops, tivemos um problema tente realizar o cadastro Novamente!</string>
 </resources>

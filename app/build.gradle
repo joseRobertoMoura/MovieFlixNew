@@ -23,9 +23,17 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
+    def localProperties = new Properties()
+    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
     buildTypes {
+        all{
+            buildConfigField "String", "API_KEY", "\"" + localProperties.getProperty("baseApi") + "\""
+            buildConfigField "String", "BASE_URL", "\"" + localProperties.getProperty("baseUrl") + "\""
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
