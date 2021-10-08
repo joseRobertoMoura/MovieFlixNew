@@ -1,17 +1,15 @@
 package com.example.moviewflixnew.ui.listMovies.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.movieflix.model.helper.ClickItemListener
 import com.example.moviewflixnew.R
-import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.data.model.MoviesModel
 
 class MovieFlixAdapter(private var list: List<MoviesModel>, private var listener: ClickItemListener) :
     RecyclerView.Adapter<MovieFlixAdapter.MoviesViewHolder>() {
@@ -35,9 +33,9 @@ class MovieFlixAdapter(private var list: List<MoviesModel>, private var listener
     }
 
    inner class MoviesViewHolder(
-        itemView: View,
-        private var list: List<MoviesModel>,
-        private var listener: ClickItemListener
+       itemView: View,
+       private var list: List<MoviesModel>,
+       private var listener: ClickItemListener
     ) : RecyclerView.ViewHolder(itemView) {
         private val tvTitl: AppCompatTextView = itemView.findViewById(R.id.movieTitle)
         private val image: AppCompatImageView = itemView.findViewById(R.id.movieImage)

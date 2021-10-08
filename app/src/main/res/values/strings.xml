@@ -5,7 +5,7 @@
     <string name="movieflix_title">MovieFlix</string>
     <string name="hint_login_email">Digite seu e-mail</string>
     <string name="hint_login_senha_primeira">Digite sua senha</string>
-    <string name="btn_text_login">Login</string>
+    <string name="btn_text_login">Entrar</string>
     <string name="tv_cadastrar_login">Cadastrar</string>
     <string name="msg_senha_incorreta">Senha incorreta!</string>
     <string name="msg_erro_login">Erro ao efeturar o login</string>
@@ -38,7 +38,7 @@
     <string name="tiltle_account_info">Perfil</string>
     <string name="hint_edt_name">Digite seu nome</string>
     <string name="hint_repetir_senha">Repita a senha anterior</string>
-    <string name="alert_senha">As senhas devem ser iguas!</string>
+    <string name="alert_senha">A senhas deve ser preenchida!</string>
     <string name="hint_login_senha">Senha</string>
     <string name="title_email_ai">Email:</string>
     <string name="title_name_ai">Nome:</string>
@@ -52,7 +52,8 @@
     <string name="title_edt_email_password_refactor">Digite o seu e-mail cadastrado no aplicativo:</string>
     <string name="txt_btn_email_cancel">Cancelar</string>
     <string name="txt_email_alert_empity">Digite um e-mail válido</string>
-    <string name="hint_confirm_password_cadastro">Digite novamente sua senha</string>
+    <string name="hint_confirm_password_cadastro">Confirme sua senha</string>
     <string name="title_bar_main">Movie Flix</string>
     <string name="subtitle_login">Login</string>
+    <string name="text_btn_voltar_cadastro">Voltar</string>
 </resources>

@@ -1,7 +1,6 @@
 package com.example.moviewflixnew.data.model
 
 import android.os.Parcelable
-import com.example.moviewflixnew.ui.model.MoviesModel
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 

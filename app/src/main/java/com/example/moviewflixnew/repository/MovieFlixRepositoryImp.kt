@@ -1,6 +1,6 @@
 package com.example.moviewflixnew.repository
 
-import com.example.moviewflixnew.data.model.DetailResponse
+import com.example.moviewflixnew.data.model.detail.DetailResponse
 import com.example.moviewflixnew.data.model.MoviesTendencyResponse
 import com.example.moviewflixnew.di.network.auth.AuthApi
 import retrofit2.Callback
@@ -43,7 +43,7 @@ class MovieFlixRepositoryImp @Inject constructor(
 
     override suspend fun requestMovieDetails(
         id: String?,
-        callbackSuccess:(success:DetailResponse?) -> Unit,
+        callbackSuccess:(success: DetailResponse?) -> Unit,
         callbackError: (error:String?) -> Unit
     ){
         val requestDetail = movieFlixApiTask.getMovieDetail(id, "579dbbdd2de6dd3cc42c4d65dc3afdae")

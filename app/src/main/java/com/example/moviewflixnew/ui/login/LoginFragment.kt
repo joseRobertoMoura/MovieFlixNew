@@ -172,6 +172,7 @@ class LoginFragment : Fragment() {
         val usuarioLogado = FirebaseAuth.getInstance().currentUser
 
         if (usuarioLogado != null){
+            colorBars.changeColorSecondary(requireActivity())
             navController.navigate(R.id.action_loginFragment_to_mainFragment)
         }
     }

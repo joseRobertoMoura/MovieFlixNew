@@ -1,4 +1,4 @@
-package com.example.moviewflixnew.ui.model
+package com.example.moviewflixnew.data.model.detail
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

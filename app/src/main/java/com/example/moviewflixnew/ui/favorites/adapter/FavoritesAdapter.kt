@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.movieflix.model.helper.ClickItemListener
 import com.example.moviewflixnew.R
-import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.data.model.MoviesModel
 
 class FavoritesAdapter(
     private var list: MutableList<MoviesModel?>,

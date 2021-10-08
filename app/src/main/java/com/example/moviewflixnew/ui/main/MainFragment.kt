@@ -140,8 +140,10 @@ class MainFragment : Fragment(){
     private fun fragments(nameFragment: String) {
         when (nameFragment) {
             "list" -> {
+                val bundle = Bundle()
+                bundle.putString("numPage", numPage.toString())
                 parentFragmentManager.beginTransaction().apply {
-                    replace(R.id.flFragment, ListMoviesFragment.newInstance(numPage.toString()))
+                    replace(R.id.flFragment, ListMoviesFragment::class.java, bundle)
                     addToBackStack(null)
                     commit()
                 }

@@ -13,14 +13,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import coil.load
 import com.example.moviewflixnew.R
-import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.data.model.MoviesModel
 import com.example.moviewflixnew.ui.MainActivity
 import com.example.moviewflixnew.ui.favorites.FavoritesViewModel
 import com.example.moviewflixnew.ui.utils.dialog.DialogMessageError
 import kotlinx.android.synthetic.main.fragment_detail_movies.*
 import javax.inject.Inject
 
-class DetailMoviesFragment(private var movie:MoviesModel) : Fragment() {
+class DetailMoviesFragment() : Fragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -31,10 +31,11 @@ class DetailMoviesFragment(private var movie:MoviesModel) : Fragment() {
     private val favoritesViewModel by viewModels<FavoritesViewModel> {viewModelFactoryFavorites}
 
     private lateinit var favoriteBtn:AppCompatImageView
+    private lateinit var movie: MoviesModel
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-
         (requireActivity() as MainActivity).mainComponent.inject(this)
     }
 
@@ -48,6 +49,11 @@ class DetailMoviesFragment(private var movie:MoviesModel) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val activity = activity as Context
+        this.arguments?.getParcelable<MoviesModel>("movie").let {
+            if (it != null){
+                movie = it
+            }
+        }
         initView(view)
         initEventClick(activity)
         bindViews(activity)
@@ -66,7 +72,7 @@ class DetailMoviesFragment(private var movie:MoviesModel) : Fragment() {
     }
 
     companion object {
-        fun newInstance(movie:MoviesModel) = DetailMoviesFragment(movie)
+        fun newInstance() = DetailMoviesFragment()
     }
 
     private fun bindViews(activity:Context) {

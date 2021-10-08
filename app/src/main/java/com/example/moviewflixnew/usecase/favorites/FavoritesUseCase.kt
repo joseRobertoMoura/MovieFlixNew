@@ -1,8 +1,7 @@
 package com.example.moviewflixnew.usecase.favorites
 
 import android.content.Context
-import com.example.moviewflixnew.data.model.cadastro.CadastroModel
-import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.data.model.MoviesModel
 
 interface FavoritesUseCase {
     suspend fun favoritesUseCase(

@@ -2,7 +2,7 @@ package com.example.moviewflixnew.usecase.favorites
 
 import android.content.Context
 import com.example.moviewflixnew.repository.favorites.MovieFlixFavoritesRepositoryImpl
-import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.data.model.MoviesModel
 import javax.inject.Inject
 
 class FavoritesUseCaseImpl @Inject constructor(

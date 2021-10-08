@@ -1,6 +1,6 @@
 package com.example.moviewflixnew.usecase.details
 
-import com.example.moviewflixnew.data.model.DetailResponse
+import com.example.moviewflixnew.data.model.detail.DetailResponse
 import com.example.moviewflixnew.repository.MovieFlixRepositoryImp
 import javax.inject.Inject
 

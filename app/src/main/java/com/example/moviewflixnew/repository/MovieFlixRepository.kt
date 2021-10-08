@@ -1,6 +1,6 @@
 package com.example.moviewflixnew.repository
 
-import com.example.moviewflixnew.data.model.DetailResponse
+import com.example.moviewflixnew.data.model.detail.DetailResponse
 import com.example.moviewflixnew.data.model.MoviesTendencyResponse
 
 interface MovieFlixRepository {
@@ -13,7 +13,7 @@ interface MovieFlixRepository {
 
     suspend fun requestMovieDetails(
         id: String?,
-        callbackSuccess:(success:DetailResponse?) -> Unit,
+        callbackSuccess:(success: DetailResponse?) -> Unit,
         callbackError: (error:String?) -> Unit
     )
 }

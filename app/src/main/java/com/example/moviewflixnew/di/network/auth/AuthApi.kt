@@ -1,6 +1,6 @@
 package com.example.moviewflixnew.di.network.auth
 
-import com.example.moviewflixnew.data.model.DetailResponse
+import com.example.moviewflixnew.data.model.detail.DetailResponse
 import com.example.moviewflixnew.data.model.MoviesTendencyResponse
 import retrofit2.Call
 import retrofit2.http.GET

@@ -4,11 +4,9 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.moviewflixnew.data.model.DetailResponse
-import com.example.moviewflixnew.data.model.login.LoginFireBaseModel
-import com.example.moviewflixnew.ui.login.LoginActionView
+import com.example.moviewflixnew.data.model.detail.DetailResponse
 import com.example.moviewflixnew.usecase.details.GetDetailUseCaseImp
-import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.data.model.MoviesModel
 import kotlinx.coroutines.*
 import javax.inject.Inject
 

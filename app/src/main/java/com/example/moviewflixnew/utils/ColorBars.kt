@@ -9,8 +9,8 @@ class ColorBars {
 
     fun changeColorPrimary(activity: Activity){
         val window : Window = activity.window
-        window.statusBarColor= ContextCompat.getColor(activity, R.color.light_blue)
-        window.navigationBarColor = ContextCompat.getColor(activity, R.color.ligh_yellow)
+        window.statusBarColor= ContextCompat.getColor(activity, R.color.dark_blue)
+        window.navigationBarColor = ContextCompat.getColor(activity, R.color.dark_yellow_700)
     }
 
     fun changeColorSecondary(activity: Activity){

@@ -5,8 +5,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiente_bg_login"
+    android:background="@color/dark_yellow_700"
     tools:context=".ui.SplashScreen">
+
+    <FrameLayout
+        android:id="@+id/card_wave"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/wave_card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/tv_title_login"
@@ -15,6 +24,7 @@
         android:text="@string/movieflix_title"
         android:textColor="@color/dark_yellow"
         android:textSize="38sp"
+        android:paddingBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

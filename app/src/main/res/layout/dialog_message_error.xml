@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_yellow"
     android:orientation="vertical"
     android:padding="20dp">
 
@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txt_title_dialog"
+        android:fontFamily="@font/quicksand"
         android:textColor="@color/red"
         android:textSize="35sp"
         android:textStyle="bold" />
@@ -21,17 +22,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="teste"
+        android:textStyle="bold"
+        android:fontFamily="@font/quicksand"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btn_close_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:fontFamily="@font/quicksand"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/red"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:text="@string/txt_title_btn_dialog" />
 
 

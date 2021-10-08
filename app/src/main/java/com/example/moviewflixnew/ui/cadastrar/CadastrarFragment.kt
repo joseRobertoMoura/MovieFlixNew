@@ -32,7 +32,6 @@ class CadastrarFragment : Fragment() {
     private lateinit var btnLogin: AppCompatButton
     private lateinit var email: AppCompatEditText
     private lateinit var senha: AppCompatEditText
-    private lateinit var senhaRepeat: AppCompatEditText
     private lateinit var nameUser: AppCompatEditText
     private lateinit var frameBtn: ConstraintLayout
 
@@ -61,13 +60,12 @@ class CadastrarFragment : Fragment() {
         btnCadastrar.setOnClickListener {
             val email = email.text.toString()
             val senha = senha.text.toString()
-            val senhaRepeat = senhaRepeat.text.toString()
             val nome = nameUser.text.toString()
 
             if (email.isEmpty() || senha.isEmpty()) {
                 tvAlertaCadastro.visibility = View.VISIBLE
                 tvAlertaCadastro.text = getString(R.string.msg_campos_vazios)
-            } else if(!verifyPassword(senha,senhaRepeat)) {
+            } else if(verifyPassword(senha)) {
                 tvAlertaCadastro.visibility = View.VISIBLE
                 tvAlertaCadastro.text = getString(R.string.alert_senha)
             }else{
@@ -82,8 +80,8 @@ class CadastrarFragment : Fragment() {
 
     }
 
-    private fun verifyPassword(senha: String, senhaRepeat: String): Boolean {
-        return senha == senhaRepeat
+    private fun verifyPassword(senha: String): Boolean {
+        return senha.isEmpty()
     }
 
     private fun initView(view: View) {
@@ -91,9 +89,9 @@ class CadastrarFragment : Fragment() {
         frameBtn = view.findViewById(R.id.frame_cadastro)
         btnCadastrar = frameBtn.findViewById(R.id.btn_cadastrar)
         btnLogin = frameBtn.findViewById(R.id.btn_login)
+        btnLogin.text = getString(R.string.text_btn_voltar_cadastro)
         email = view.findViewById(R.id.edt_email_cadastrar)
         senha = view.findViewById(R.id.edt_senha_cadastrar_first)
-        senhaRepeat = view.findViewById(R.id.edt_senha_cadastrar_second)
         nameUser = view.findViewById(R.id.name_cadastro)
     }
 
@@ -102,8 +100,6 @@ class CadastrarFragment : Fragment() {
         cadastroViewModel.cadastroActionView.observe(viewLifecycleOwner){ state ->
             when(state){
                 is CadastroActionView.CadastroSuccess -> {
-                    Toast.makeText(activity, state.success, Toast.LENGTH_SHORT)
-                        .show()
                     backMain()
                 }
                 is CadastroActionView.CadastroError -> {

@@ -3,8 +3,6 @@ package com.example.moviewflixnew.repository.login
 import android.content.Context
 import com.example.moviewflixnew.data.model.cadastro.CadastroModel
 import com.example.moviewflixnew.data.model.login.LoginFireBaseModel
-import com.example.moviewflixnew.ui.model.MoviesModel
-import com.example.moviewflixnew.ui.utils.preferences.ManagmentPreferences
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.database.DataSnapshot

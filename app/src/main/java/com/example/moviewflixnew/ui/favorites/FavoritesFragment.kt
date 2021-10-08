@@ -16,7 +16,7 @@ import com.example.moviewflixnew.R
 import com.example.moviewflixnew.ui.MainActivity
 import com.example.moviewflixnew.ui.details.DetailMoviesFragment
 import com.example.moviewflixnew.ui.favorites.adapter.FavoritesAdapter
-import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.data.model.MoviesModel
 import javax.inject.Inject
 
 class FavoritesFragment() : Fragment() {
@@ -68,8 +68,12 @@ class FavoritesFragment() : Fragment() {
         },
             object : ClickItemListener {
                 override fun ClickItemMovie(movie: MoviesModel) {
+                    val bundle = Bundle()
+                    bundle.putParcelable("movie",movie)
+                    val fragment = DetailMoviesFragment.newInstance()
+                    fragment.arguments = bundle
                     parentFragmentManager.beginTransaction().apply {
-                        replace(R.id.flFragment, DetailMoviesFragment.newInstance(movie))
+                        replace(R.id.flFragment, fragment)
                         addToBackStack(null)
                         commit()
                     }

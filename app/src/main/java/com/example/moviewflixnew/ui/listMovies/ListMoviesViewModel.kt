@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.moviewflixnew.data.model.MoviesTendencyResponse
 import com.example.moviewflixnew.usecase.tendency.GetListTendencyUseCaseImp
-import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.data.model.MoviesModel
 import kotlinx.coroutines.*
 import javax.inject.Inject
 

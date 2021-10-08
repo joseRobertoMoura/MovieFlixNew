@@ -4,8 +4,7 @@ import androidx.lifecycle.Observer
 import com.example.moviewflixnew.InstantTaskExecutorMovieRule
 import com.example.moviewflixnew.usecase.tendency.GetListTendencyUseCaseImp
 import com.example.moviewflixnew.ui.listMovies.ListMoviesViewModel
-import com.example.moviewflixnew.ui.model.MoviesModel
-import com.example.moviewflixnew.ui.model.MoviesTendencyModel
+import com.example.moviewflixnew.data.model.MoviesModel
 import io.mockk.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.TestCoroutineDispatcher
@@ -56,12 +55,14 @@ class ListMoviesViewModelTest{
     fun `when ListViewModel init then it should call the useCase`() {
         GlobalScope.launch {
             withContext(Dispatchers.Unconfined){
-                val list: List<MoviesModel> = arrayListOf(MoviesModel(
+                val list: List<MoviesModel> = arrayListOf(
+                    MoviesModel(
                     "0",
                     "teste",
                     "teste",
                     "tesete"
-                ))
+                )
+                )
 
                 val mockedList = MoviesTendencyModel(list,null,null)
 

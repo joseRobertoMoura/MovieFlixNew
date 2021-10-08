@@ -13,6 +13,7 @@ class DialogMessageErrorClass(private var message:String):DialogFragment() {
 
     companion object{
         fun newInstance(message: String) = DialogMessageErrorClass(message)
+        const val NUM_PAGE = "1"
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -22,7 +23,9 @@ class DialogMessageErrorClass(private var message:String):DialogFragment() {
                 .setMessage(message)
                 .setNegativeButton("Tentar Novamente",DialogInterface.OnClickListener{ dialog, id ->
                     parentFragmentManager.beginTransaction().apply {
-                        replace(R.id.flFragment, ListMoviesFragment.newInstance("1"))
+                        val bundle = Bundle()
+                        bundle.putString("numPage", NUM_PAGE)
+                        replace(R.id.flFragment, ListMoviesFragment::class.java, bundle)
                         addToBackStack(null)
                         commit()
                     }

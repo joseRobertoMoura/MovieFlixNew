@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
@@ -18,21 +17,17 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movieflix.model.helper.ClickItemListener
 import com.example.moviewflixnew.R
-import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.data.model.MoviesModel
 import com.example.moviewflixnew.ui.MainActivity
 import com.example.moviewflixnew.ui.listMovies.adapter.MovieFlixAdapter
 import com.example.moviewflixnew.ui.details.DetailMoviesFragment
 import com.example.moviewflixnew.ui.utils.dialog.DialogMessageErrorClass
-import com.example.moviewflixnew.ui.favorites.FavoritesViewModel
 import com.example.moviewflixnew.ui.utils.dialog.MessagesDialogUtilsImpl
 import com.example.moviewflixnew.ui.utils.preferences.ManagmentPreferences
 import kotlinx.android.synthetic.main.fragment_list_movies.view.*
 import javax.inject.Inject
 
-@Suppress("SameParameterValue")
-class ListMoviesFragment(
-    private var numPage: String
-    ) : Fragment(){
+class ListMoviesFragment() : Fragment(){
 
     lateinit var navController: NavController
     private var totalPages = 0
@@ -48,6 +43,7 @@ class ListMoviesFragment(
     private lateinit var btnNext: AppCompatImageView
     private lateinit var progressBar: ProgressBar
     private lateinit var setUserInfo: ManagmentPreferences
+    private lateinit var numPage:String
 
 
     override fun onAttach(context: Context) {
@@ -65,6 +61,11 @@ class ListMoviesFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
+        this.arguments?.getString("numPage").let {
+            if(it != null){
+                numPage = it
+            }
+        }
         val activity = activity as Context
         initView(view,activity)
         initViewModel(numPage, view, activity)
@@ -110,7 +111,7 @@ class ListMoviesFragment(
     }
 
     companion object {
-        fun newInstance(numPage:String) = ListMoviesFragment(numPage)
+        fun newInstance() = ListMoviesFragment()
     }
 
     private fun setAdapter(view: View, activity: Context, list:List<MoviesModel>) {
@@ -118,9 +119,10 @@ class ListMoviesFragment(
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.adapter = MovieFlixAdapter(list, object:ClickItemListener{
             override fun ClickItemMovie(movie: MoviesModel) {
+                val bundle = Bundle()
+                bundle.putParcelable("movie",movie)
                 parentFragmentManager.beginTransaction().apply {
-                    replace(R.id.flFragment, DetailMoviesFragment.newInstance(movie))
-                    setCustomAnimations(R.anim.animation_exit, R.anim.animation_exit)
+                    replace(R.id.flFragment, DetailMoviesFragment::class.java,bundle)
                     addToBackStack(null)
                     commit()
                 }

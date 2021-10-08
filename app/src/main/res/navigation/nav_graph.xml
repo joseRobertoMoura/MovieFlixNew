@@ -17,7 +17,7 @@
         <action
             android:id="@+id/action_loginFragment_to_cadastrarFragment"
             app:destination="@id/cadastrarFragment"
-            app:enterAnim="@anim/animation_enter" />
+            app:enterAnim="@anim/animation_enter_cadastro" />
         <action
             android:id="@+id/action_loginFragment_self"
             app:destination="@id/loginFragment" />
@@ -45,7 +45,7 @@
         <action
             android:id="@+id/action_splashScreen_to_loginFragment"
             app:destination="@id/loginFragment"
-            app:enterAnim="@anim/animation_exit" />
+            app:enterAnim="@anim/animation_enter" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"

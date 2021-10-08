@@ -14,7 +14,7 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movieflix.model.helper.ClickItemListener
 import com.example.moviewflixnew.R
-import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.data.model.MoviesModel
 import com.example.moviewflixnew.ui.MainActivity
 import com.example.moviewflixnew.ui.listMovies.adapter.MovieFlixAdapter
 import com.example.moviewflixnew.ui.details.DetailMoviesFragment
@@ -96,7 +96,7 @@ class SearchFragment : Fragment(),ClickItemListener {
         rv_list_movies_search.adapter = MovieFlixAdapter(list,this)
     }
 
-    private fun searchList(view: View,activity: Context,list: List<MoviesModel>, title: String) {
+    private fun searchList(view: View, activity: Context, list: List<MoviesModel>, title: String) {
         val listResult: MutableList<MoviesModel> = arrayListOf()
         for (element in list) {
             if (element.original_title?.contains(title, ignoreCase = true) == true) {
@@ -109,8 +109,12 @@ class SearchFragment : Fragment(),ClickItemListener {
     }
 
     override fun ClickItemMovie(movie: MoviesModel) {
-        requireFragmentManager().beginTransaction().apply {
-            replace(R.id.flFragment, DetailMoviesFragment.newInstance(movie))
+        val bundle = Bundle()
+        bundle.putParcelable("movie",movie)
+        val fragment = DetailMoviesFragment.newInstance()
+        fragment.arguments = bundle
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.flFragment, fragment)
             addToBackStack(null)
             commit()
         }

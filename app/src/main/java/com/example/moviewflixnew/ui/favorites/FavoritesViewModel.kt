@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.data.model.MoviesModel
 import com.example.moviewflixnew.usecase.favorites.FavoritesUseCaseImpl
 import kotlinx.coroutines.*
 import javax.inject.Inject
@@ -70,7 +70,7 @@ class FavoritesViewModel @Inject constructor(
         }
     }
 
-    private fun executPostMovieDB(movie:MoviesModel,context: Context) {
+    private fun executPostMovieDB(movie: MoviesModel, context: Context) {
         mainDispatcherScope.launch {
             PostMovieDB(movie,context)
         }

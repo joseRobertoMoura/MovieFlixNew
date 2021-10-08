@@ -1,9 +1,7 @@
 package com.example.moviewflixnew.repository.favorites
 
 import android.content.Context
-import android.graphics.Movie
-import android.widget.Toast
-import com.example.moviewflixnew.ui.model.MoviesModel
+import com.example.moviewflixnew.data.model.MoviesModel
 import com.example.moviewflixnew.ui.utils.preferences.ManagmentPreferences
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
